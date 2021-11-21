@@ -7,7 +7,6 @@ body{
     box-shadow:0px 2px 5px #777;
 }
 .navbar-brand{
-    font-family: 'Poppins';
     font-size: 35px;
     color:black !important;
 }
@@ -32,4 +31,94 @@ body{
 .menu-right-btn:hover{
     color:white;
     background-color:blanchedalmond;
+}
+.site-content{
+    background-image: url('../images/home.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.site-title, .site-desc{
+    color:white;
+    
+}
+.site-title{
+    margin-top: 2%;
+    margin-bottom:6%;
+    font-size:50px;
+}
+.site-desc{
+    font-size: 14px;
+    padding-left: 15%;
+}
+.site-btn1{
+    background-color: black;
+    color:white;
+    margin-top: 5%;
+    margin-bottom: 40%;
+}
+.wrapper{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+}
+.carousel{
+    position:relative;
+    height:500px;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+.carousel__image{
+    width:100%;
+    height: 100%;
+    object-fit:cover;
+}
+.carousel__track-container{
+    background: darkgrey;
+    height:100%;
+    position:relative;
+}
+.carousel__track{
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+.carousel__slide{
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:100%;
+}
+.carousel__button{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    background:transparent;
+    border:0;
+    cursor:pointer;
+}
+.carousel__button--left{
+    left:-40px;
+}
+.carousel__button--right{
+    right:-40px;
+}
+.carousel__button img{
+    width:12px;
+}
+.carousel__navi{
+    display:flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.carousel__indicator{
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(0,0,0,.3);
+    margin:0 12px;
+}
+.carousel__indicator.current-slide{
+    background: rgba(0,0,0,.75);
 }
