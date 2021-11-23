@@ -1,124 +1,261 @@
-body{
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+:root{
+    --white: #fff;
+    --black: #000;
+    --blue: #31326f;
+    --light-blue: #258aff;
+    --color-primary: #9d0191;
+    --color-sec: #db6400;
+    --color-grey: #e3eef8;
+    --light-grey: #ccc;
+    --dark-grey: #222831;
+    --pink:#e9204f;
+}
+*{
     margin:0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
-.nav-light{
-    box-shadow:0px 2px 5px #777;
-}
-.navbar-brand{
-    font-size: 35px;
-    color:black !important;
-}
-.nav-link{
-    font-size:16px;
-    margin:15px;
-    color: black !important;
-}
-.nav-link:hover{
-    color: rgb(156, 152, 152) !important;
-}
-.active .nav-link{
-    color: rgb(156, 152, 152) !important;
-}
-.menu-right-btn{
-    padding:13px 46px;
-    margin-right: 4%;
-    background-color: transparent;
-    transition: all 300ms ease-in;
+    box-sizing: border-box;
 }
 
-.menu-right-btn:hover{
-    color:white;
-    background-color:blanchedalmond;
+body{
+    font-family: 'Poppins', sans-serif;
 }
-.site-content{
-    background-image: url('../images/home.jpeg');
-    background-attachment: fixed;
-    background-size: cover;
+
+html{
+    font-size:10px;
 }
-.site-title, .site-desc{
-    color:white;
-    
+
+p{
+    font-size: 1.6rem;
+    line-height: 1.5;
 }
-.site-title{
-    margin-top: 2%;
-    margin-bottom:6%;
-    font-size:50px;
+img{
+    /*width:100%*/
 }
-.site-desc{
-    font-size: 14px;
-    padding-left: 15%;
+
+section{
+    width: 100%;
+    padding: 8rem 0;
 }
-.site-btn1{
-    background-color: black;
-    color:white;
-    margin-top: 5%;
-    margin-bottom: 40%;
-}
-.wrapper{
-    width:100vw;
-    height: 100vh;
-    display: flex;
-}
-.carousel{
-    position:relative;
-    height:500px;
-    width: 800px;
+.container{
+    width: 100%;
+    max-width: 110rem;
     margin: 0 auto;
-    margin-top: 2%;
+    padding:0 2rem;
 }
-.carousel__image{
+
+/* Header Section */
+/* Header Section */
+/* Header Section */
+header{
     width:100%;
-    height: 100%;
-    object-fit:cover;
+    background-color: var(--black);
+    padding: 5px 0;
 }
-.carousel__track-container{
-    background: darkgrey;
-    height:100%;
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem;
+}
+nav .logo{
+    width: 15rem;
+}
+.nav-ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-ul li a {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 0;
+    margin-left: 3rem;
+    color: var(--white);
+}
+
+.nav-link,
+.current{
+    position: relative;
+}
+
+.nav-link::before,
+.current::before{
+    position:absolute;
+    content: "";
+    left: 0;
+    bottom:-3px;
+    width: 50%;
+    height: 2px;
+    background-color: var(--pink);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .6s;
+}
+.current::before{
+    transform: scaleX(1);
+}
+.nav-link:hover::before{
+    transform: scaleX(1);
+}
+
+.hamburger,
+.close,
+.search{
+    font-size: 2.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+.hamburger{
+    display: none;
+}
+
+.search{
+    font-size: 1.8rem;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.5rem 3rem 0 0;
+    display: none;
+}
+
+/* Intro Section */
+#intro{
+    width: 100%;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0;
+    z-index: -2;
+}
+
+#intro .container {
+    background: url('../images/background.jpeg') no-repeat;
+    background-position-x: 70%;
+}
+.line{
+    position: relative;
+    padding-top: 3rem;
+}
+.line::before{
+    content: "";
+    position: absolute;
+    top: 5rem;
+    left:0;
+    width: 5rem;
+    height: 3px;
+    background-color: var(--pink);
+}
+
+.intro-text{
+    width: 80%;
+    padding: 8rem 0;
+}
+.intro-text h1{
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 5rem;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    border: 2px solid var(--pink);
+    cursor: pointer;
     position:relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
 }
-.carousel__track{
-    padding:0;
-    margin:0;
-    list-style:none;
-}
-.carousel__slide{
-    position:absolute;
+
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
     top:0;
-    bottom:0;
-    width:100%;
+    width: 99.5%;
+    height: 100%;
+    background-color: var(--pink);
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
 }
-.carousel__button{
-    position:absolute;
-    top:50%;
-    transform: translateY(-50%);
-    background:transparent;
-    border:0;
-    cursor:pointer;
+
+.btn:hover::before{
+    transform: translateX(0);
 }
-.carousel__button--left{
-    left:-40px;
+
+/* intro boxes */
+.intro-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    row-gap: 4rem;
+    column-gap: 2rem;
+    margin-top: 2rem;
+    z-index: 1;
 }
-.carousel__button--right{
-    right:-40px;
+
+.card{
+    background-color: var(--dark-grey);
+    padding: 6rem 3rem;
 }
-.carousel__button img{
-    width:12px;
+
+.card i {
+    font-size: 4rem;
+    color: var(--pink);
+    padding-bottom: 3rem;
 }
-.carousel__navi{
-    display:flex;
-    justify-content: center;
-    padding: 10px 0;
+
+.heading-3 {
+    font-size: 2.3rem;
+    font-weight: 700;
 }
-.carousel__indicator{
-    border: 0;
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    background: rgba(0,0,0,.3);
-    margin:0 12px;
+.card h3{
+    padding-bottom: 4rem;
 }
-.carousel__indicator.current-slide{
-    background: rgba(0,0,0,.75);
+
+.card .line::before {
+    top: 7rem;
 }
+
+.cards:nth-child(3){
+    position: relative;
+    background-color: var(--dark-grey);
+}
+
+.card:nth-child(3)::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -1.5rem;
+    width: 105%;
+    height: 7rem;
+    background-color: var(--pink);
+    z-index: -1;
+}
+
+.card:nth-child(3)::after{
+    position: absolute;
+    content: "";
+    right: -5%;
+    bottom: -1.5rem;
+    width: 5%;
+    height: 7rem;
+    background-color: var(--pink);
+}
+
+
