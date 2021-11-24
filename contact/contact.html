@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Contact</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Black Rabbit Digital | Media Website</title>
+        <link rel="shortcut icon" href="../images/BRD.ico">
+        <!-- Bootstrap CSS + Font icons -->
+        <link rel="stylesheet" href="../style/bootstrap.min.css">
+        <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="../style/style.css">
+        <link rel="stylesheet" href="../style/media-queries.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <header>
+                <div class="container-fluid">
+                    <nav>
+                        <img src="../images/BRD.png" alt="logo" class="logo">
+                        <!--hamburger togger-->
+                        <div class="hamburger">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    <!-- Navigation-->
+                    <ul class="nav-ul">
+                        <i class="fas fa-times close"></i>
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../about/" class="nav-link">About</a></li>
+                        <li><a href="../portfolio/" class="nav-link">Portfolio</a></li>
+                        <li><a href="../services/" class="nav-link">Services</a></li>
+                        <li><a href="contact.html" class="nav-link current">Contact</a></li>
+                    </ul>
+                    <i class="fas fa-search search"></i>
+                    </nav>	
+                </div>
+            </header>
+        </div>
+        <main>
+            <!-- Top section -->
+        <section id="intro">
+            <div class="container">
+                <div class="intro-text line">
+                    <h1>Black Rabbit Digital</h1>
+                    <a href="#" class="btn btn-dark">Contact Us</a>
+                </div>
+            </div>
+        </section>
+            <!-- Form -->
+        <section id="contact-form"></section>
+            <div class="container">
+                <div class="form-text">
+                    <form onsubmit="return false">
+                    <h2>Make an Enquiry</h2>
+                        <p id="fineprint"><sup class="red-text">*</sup>mandatory field - please fill in</p>
+                        <labeL class="required">Enter your name: </labeL>
+                        <input type="text" placeholder="Name" id="name" class="input-style" required/>
+                        <br>
+                        <br>
+                        <labeL class="required">Enter your email address: </labeL>
+                        <input type="text" placeholder="Email address" id="email" class="input-style" required/>
+                        <br>
+                        <br>
+                        <labeL>Enter your company name: </labeL>
+                        <input type="text" placeholder="Company name" id="companyName" class="input-style"/>
+                        <br>
+                        <br>
+                        <labeL>Enter the details of your enquiry here: </labeL>
+                        <input type="text" placeholder="Your enquiry..." id="enquiry" class="input-style">
+                        <br>
+                        <br>
+                        <button onclick="formSubmission()">Submit</button>
+                        <br>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <script src="script.js></script>
+    </body>
+</html>
