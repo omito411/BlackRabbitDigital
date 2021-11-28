@@ -357,6 +357,14 @@ nav .logo{
     color: lightgray;
 }
 
+.container .btn{
+    text-align: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
 .h-line{
     position: relative;
 }
