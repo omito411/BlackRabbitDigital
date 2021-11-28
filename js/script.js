@@ -13,6 +13,34 @@ close.addEventListener("click", () => {
     hamburger.classList.toggle("hide");
 });
 
+// Countdown timer//
+const countTo = "31 May 2023";
+
+const c = setInterval(() => {
+    const endDate = new Date(countTo);
+    const currentDate = new Date();
+    const totalSeconds = (endDate - currentDate) / 1000;
+
+    const days = Math.floor(totalSeconds / 3600 / 24);  
+    const hours = Math.floor(totalSeconds / 3600) % 24;  
+    const mins = Math.floor(totalSeconds / 3600 / 60) % 60;  
+    const secs = Math.floor(totalSeconds) % 60;  
+
+    const countDown = document.getElementById("countdown");
+
+    countDown.textContent = +days+'Days ' +format(hours)+'Hrs :' +format(mins)+'Min :' +format(secs)+'s';
+
+    if(totalSeconds < 0) {
+        clearInterval(c);
+        countDown.textContent = "We're Live";
+    }
+
+}, 1000)
+
+function format(t){
+    return t < 10 ? '0'+t :+  t;
+}
+
 // Carousel //
 let thumbnails = document.getElementsByClassName("thumbnail");
 let carousels = document.getElementById("carousel");
