@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="style/bootstrap.min.css">
 	<script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
 	<!-- Style CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="stylesheet" href="style/media-queries.css">
 	
@@ -46,7 +47,9 @@
                     </div>
                     <!-- Intro cards -->
                     <div class="intro-cards">
-                        <div class="card">
+                        <div class="card" data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine">
                             <i class="fas fa-rocket"></i>
                             <h3 class="line heading-3">Product Info</h3>
                             <p>
@@ -62,7 +65,9 @@
                             </p>
                         </div>
                         <!-- Card 3 -->
-                        <div class="card">
+                        <div class="card" data-aos="fade-left"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine">
                             <i class="fas fa-search-dollar"></i>
                             <h3 class="line heading-3">Price Checker</h3>
                             <p>
@@ -75,7 +80,8 @@
             </section>
 
             <!-- About section -->
-            <section id="about">
+            <section id="about" data-aos="fade-up"
+            data-aos-duration="3000">
                 <div class="container ab">
                     <div class="heading line">
                         <h2>So what do we do exactly?</h2>
@@ -138,7 +144,9 @@
             <div class="h-line"></div>
 
             <!-- Carousel -->
-            <div class="slide-container">
+            <div class="slide-container" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
                 <img src="images/left.png" alt="left"
                 id="slide-left" class="arrow">
             
@@ -166,26 +174,57 @@
                 <img src="images/right.png" alt="right"
                 id="slide-right" class="arrow">
             </div>
-
+            <!--Portfolio link-->
             <div class="portfolio_text-container">
                 <div class="portfolio-text">
                     <h2>See more of our work</h2>
                     <a href="portfolio/portfolio.html" class="btn btn-dark">Our Portfolio</a>
                 </div>
+            </div>
+
+            <!-- Homepage contact section-->
+            <section id="contact">
+                <div class="container">
+                    <div class="contact">
+                        <!-- Icons -->
+                        <div class="contact-icon">
+                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <!-- text -->
+                        <h2>Contact Us</h2>
+                        <!-- button to contact form-->
+                        <a href="#" class="btn">Contact form</a>
+                    </div>
+                </div>
+            </section>
         </main>
 
-    
+        <footer>
+            <div class="container">
+                <p>2021 &copy; BlackRabbitDigital. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <div class="search-modal" id="modal">
+            <span class="close-modal">&times;</span>
+            <div class="modal-content">
+                <form action="">
+                    <input type="text" placeholder="Search"/>
+                    <i class="fas fa-search search"></i>
+                </form>
+            </div>
+        </div>
 
     
-
-
-
-
 
 
 
 
         <!-- Script Source Files -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script src="js/script.js"></script>
         <!-- End Script Source Files -->
     </body>

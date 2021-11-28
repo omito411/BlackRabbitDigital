@@ -80,3 +80,24 @@ for (let i = 0; i < thumbnails.length; i++){
         return play = setInterval(autoPlay, 50);
     })
 }
+
+// Search Modal //
+const btn = document.querySelector(".search");
+const closeModal = document.querySelector(".close-modal");
+
+btn.addEventListener("click", openPopup);
+closeModal.addEventListener("click", closePopup);
+
+function openPopup(e) {
+    e.preventDefault();
+    modal.style.display = "block";
+}
+
+function closePopup() {
+    modal.style.display = "none";
+}
+
+// Page animation//
+AOS.init({
+    duration: 1000,
+})
