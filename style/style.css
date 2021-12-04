@@ -139,7 +139,7 @@ nav .logo{
 }
 
 #intro .container {
-    background: url('../images/background.jpeg') no-repeat;
+    background: url('../images/background.jpeg') ;
     background-position-x: 70%;
 }
 .line{
