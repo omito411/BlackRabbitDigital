@@ -1,0 +1,54 @@
+
+/*my style*/
+.flex-container { 
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.flex-item-left{
+    display: flex;
+    width: 50%;
+    align-self: flex-start;
+    height: 200px;
+    flex-direction:column;
+}
+
+.flex-item-right{
+    display: flex;
+    width: 50%;
+    align-self: flex-end;
+    height: 200px;
+    flex-direction: column;
+}
+
+
+.about-container{
+    background-color: black;
+    color: white;
+    border: 10px solid var(--dark-grey);
+    padding: 35px;
+   
+    
+}
+
+.alternate-about-blurb{
+    text-align: left;
+    
+}
+
+.about-blurb {
+    text-align: right;
+    margin-right: 35px;
+}
+
+.about-img {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    padding: 5px;
+    border: 5px solid var(--pink);
+    
+    
+}

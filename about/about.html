@@ -11,7 +11,7 @@
         <!-- Style CSS -->
         <link rel="stylesheet" href="../style/style.css">
         <link rel="stylesheet" href="../style/media-queries.css">
-        <link rel="stylesheet" href="mystyle.css">
+        <link rel="stylesheet" href="myStyle.css">
     </head>
     <body>
         <div>
@@ -23,16 +23,16 @@
                         <div class="hamburger">
                             <i class="fas fa-bars"></i>
                         </div>
-                    <!-- Navigation-->
-                    <ul class="nav-ul">
-                        <i class="fas fa-times close"></i>
-                        <li><a href="../index.html" class="nav-link">Home</a></li>
-                        <li><a href="../about/" class="nav-link current">About</a></li>
-                        <li><a href="../portfolio/" class="nav-link">Portfolio</a></li>
-                        <li><a href="../services/" class="nav-link">Services</a></li>
-                        <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    </ul>
-                    <i class="fas fa-search search"></i>
+                        <!-- Navigation-->
+                        <ul class="nav-ul">
+                            <i class="fas fa-times close"></i>
+                            <li class="link"><a href="../index.html" class="nav-link">Home</a></li>
+                            <li class="link"><a href="about.html" class="nav-link current">About</a></li>
+                            <li class="link"><a href="../portfolio/portfolio.html" class="nav-link">Portfolio</a></li>
+                            <li class="link"><a href="../services/services.html" class="nav-link">Services</a></li>
+                            <li class="link"><a href="../contact/contact.html" class="nav-link">Contact</a></li>
+                        </ul>
+                        <i class="fas fa-search search"></i>
                     </nav>	
                 </div>
             </header>
@@ -43,38 +43,111 @@
             <div class="container">
                 <div class="intro-text line">
                     <h1>Black Rabbit Digital</h1>
-                    <a href="#" class="btn btn-dark">About</a>
+                    <a href="#" class="btn btn-dark">About Us</a>
                 </div>
             </div>
         </section>
         <section>
             <div class="container">
-                <h2>Who We Are</h2>
-                <br>
-                <div class="container-fluid">
-                    <h2>Stephen Omitogun</h2>
-                    <h3>Developer</h3>
+                <div class="heading line">
+                    <h2>Who We Are</h2>
                     <br>
-                    <p class="about">Stephen has a background in life-science and transitioned to the coding world. His favourite things to do are football, hiking, walks with his Golden Retriever (Nala) and also outings with friends. </p>
-                    <br>
-                    <img src="../images/stephen.jpeg" alt="photo of Stephen">
                 </div>
-                <br>
-                <div class="container-fluid">
-                    <h2>Dara O'Heocha</h2>
+                <div>
+                    <div class="flex-container about-container">
+                        <div class="flex-item-left">
+                            <h1><b>Stephen Omitogun</b></h1>
+                            <br>
+                            <h3>Developer</h3>
+                            <br>
+                            <p class="alternate-about-blurb">Stephen has a background in life-science and transitioned to the coding world. His favourite things to do are football, hiking, walks with his Golden Retriever (Nala) and also outings with friends. </p>
+                            <br>
+                            <br>
+                        </div>
+                        <div class="flex-item-right">
+                            <img src="../images/stephen.jpeg" alt="photo of Stephen" class="about-img">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="flex-container">
+                        <div class="flex-item-left">
+                            <img src=".." alt="photo of Dara" class="about-img">
+                        </div>
+                        <div class="flex-item-right about-blurb">
+                            <h1><b>Dara O'Heocha</b></h1>
+                            <br>
+                            <h3>Title</h3>
+                            <br>
+                            <br>
+                            <p>About Dara..</p>
+                            <br>
+                        </div>      
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="flex-container about-container">
+                        <div class="flex-item-left">
+                            <h1><b>Aisling Dwyer</b></h1>
+                            <br>
+                            <h3>Developer</h3>
+                            <br>
+                            <p class="alternate-about-blurb">Aisling comes from a background in the health and wellness industry. She first started coding in early 2021 and has been hooked since. Her knowledge base continues to grow through her formal studies in NCI (National College of Ireland).</p>
+                            <br>
+                            <br>
+                        </div>
+                        <div class="flex-item-right">
+                            <img src="../images/square-photo-ad.jpeg" alt="photo of Aisling" class="about-img">
+                        </div>
+                    <br>
+                    <br>
+                    <br>
                 </div>
+            </div>
+            <div>
                 <br>
-                <div class="container-fluid">
-                    <h2>Aisling Dwyer</h2>
-                    <h3>Developer</h3>
-                    <br>
-                    <p>Aisling comes from a background in the health and wellness industry. She first started coding in early 2021 and has been hooked since. 
-                        Her knowledge base continues to grow through her formal studies in NCI (National College of Ireland).</p>
-                    <br>
-                    <img src="../images/photo-of-me.jpeg" alt="photo of Aisling">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <!-- Homepage contact section-->
+        <section id="contact">
+            <div class="container">
+                <div class="contact">
+                    <!-- Icons -->
+                    <div class="contact-icon">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <!-- text -->
+                    <h2>Contact Us</h2>
+                    <!-- button to contact form-->
+                    <a href="#" class="btn">Contact form</a>
                 </div>
             </div>
         </section>
         </main>
+        <footer>
+            <div class="container">
+                <p>2021 &copy; BlackRabbitDigital. All rights reserved.</p>
+            </div>
+        </footer>
+        <div class="search-modal" id="modal">
+            <span class="close-modal">&times;</span>
+            <div class="modal-content">
+                <form action="">
+                    <input type="text" placeholder="Search"/>
+                    <i class="fas fa-search search"></i>
+                </form>
+            </div>
+        </div>
     </body>
  </html>
