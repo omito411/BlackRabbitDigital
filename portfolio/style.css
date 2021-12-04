@@ -1,0 +1,32 @@
+/* Portfolio */
+:root{
+    --white: #fff;
+    --black: #000;
+    --blue: #31326f;
+    --light-blue: #258aff;
+    --color-primary: #9d0191;
+    --color-sec: #db6400;
+    --color-grey: #e3eef8;
+    --light-grey: #ccc;
+    --dark-grey: #222831;
+    --pink:#e9204f;
+}
+.heading > *{
+    padding-bottom: 2rem;
+}
+.heading h1{
+    font-size: 5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+}
+#portfolio{
+    width: 100%;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0;
+    z-index: -2;
+}
+#portfolio .container {
+        background: url('../images/background.jpeg') no-repeat;
+        background-position-x: 70%;
+}
