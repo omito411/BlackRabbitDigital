@@ -105,7 +105,7 @@ nav .logo{
     transform: scaleX(1);
 }
 
-.burger,
+.hamburger,
 .close,
 .search{
     font-size: 2.5rem;
@@ -139,7 +139,7 @@ nav .logo{
 }
 
 #intro .container {
-    background: url('../images/background.jpeg') ;
+    background: url('../images/background.jpeg') no-repeat;
     background-position-x: 70%;
 }
 .line{
