@@ -13,6 +13,7 @@ close.addEventListener("click", () => {
     hamburger.classList.toggle("hide");
 });
 
+
 // Search Modal //
 const btn = document.querySelector(".search");
 const closeModal = document.querySelector(".close-modal");
@@ -28,3 +29,8 @@ function openPopup(e) {
 function closePopup() {
     modal.style.display = "none";
 }
+
+// Page animation//
+AOS.init({
+    duration: 1000,
+})
