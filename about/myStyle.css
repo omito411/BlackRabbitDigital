@@ -61,6 +61,19 @@
     border: 5px solid var(--pink);  
 }
 
+.mini-form-flex-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-form-flex-1{
+    display: flex;
+}
+
+.mini-form-flex-2{
+    display: flex;
+}
+
 @media (max-width: 830px) {
     .flex-container {
       flex-direction: column;
