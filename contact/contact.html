@@ -58,29 +58,29 @@
         <section id="contact-form">
             <div class="form-container">
                 <div class="form-text">
-                    <form onsubmit="return false">
+                    <form method="POST">
                     <h1 class="form-intro">Please fill in the form below and we will get in touch as soon as we can. <br/>We look forward to working with you.</h1>                   
                         <br>
                         <p id="fineprint"><sup class="red-text">*</sup>mandatory field - please fill in</p>
                         <br>
                         <br>
-                        <labeL class="required">Enter your name: </labeL>
+                        <label class="required">Enter your name: </label>
                         <input type="text" placeholder="Name" id="name" required/>
                         <br>
                         <br>
-                        <labeL class="required">Enter your email address: </labeL>
-                        <input type="text" placeholder="Email address" id="email" required/>
+                        <label class="required">Enter your email address: </label>
+                        <input type="email" placeholder="Email address" id="email" required/>
                         <br>
                         <br>
-                        <labeL>Enter your company name: </labeL>
-                        <input type="text" placeholder="Company name" id="companyName"/>
+                        <label>Enter your company name: </label>
+                        <input type="text" placeholder="Company name"/>
                         <br>
                         <br>
-                        <labeL>Enter the details of your enquiry here: </labeL>
-                        <input type="text" placeholder="Your enquiry..." id="enquiry">
+                        <label>Enter the details of your enquiry here: </label>
+                        <input type="text" placeholder="Your enquiry...">
                         <br>
                         <br>
-                        <button onclick="formSubmission()">Submit</button>
+                        <button type="submit" id="contact-submit-btn" class="btn">Submit</button>
                         <br>
                         <br>
                     </form>
@@ -120,6 +120,6 @@
                 </form>
             </div>
         </div>
-        <script src="script.js></script>
+        <script src="script.js"></script>
     </body>   
 </html>
