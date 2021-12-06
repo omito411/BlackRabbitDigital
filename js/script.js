@@ -101,3 +101,10 @@ function closePopup() {
 AOS.init({
     duration: 1000,
 })
+
+
+//Price Checker Form
+function validateForm(){
+    alert('hello');
+
+}
