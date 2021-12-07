@@ -48,22 +48,6 @@ form input {
   border: 4px solid var(--pink);
 }
 
-form input [type=submit]{
-    width: 25%;
-    height: 50px;
-    display: inline-block;
-    padding: 1.5rem 3rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--white);
-    border: 2px solid var(--pink);
-    cursor: pointer;
-    position:relative;
-    background-color: transparent;
-    text-decoration: none;
-    overflow: hidden;
-    z-index: 1;
-    
-}
+
 
 

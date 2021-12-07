@@ -40,6 +40,11 @@
     margin: 10px;   
 }
 
+.about-text{
+    text-align: left;
+    line-height: 1.8;
+    font-size: 20px;
+}
 .alternate-about-blurb{
     text-align: left;
     
