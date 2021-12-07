@@ -53,6 +53,8 @@
 }
 
 .about-img {
+    height: 190px;
+    width: 190px;
     display: block;
     margin: auto;
     padding: 5px;
