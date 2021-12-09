@@ -1,3 +1,14 @@
+$(document).ready(function(){
+    $("button.about-click").click(function(){
+      $("#div1").css("display", "flex")
+      .hide().fadeIn(3000);
+      $("#div2").css("display", "flex")
+      .hide().fadeIn(6000);
+      $("#div3").css("display", "flex")
+      .hide().fadeIn(9000);
+    });
+  });
+
 
 
 function formSubmission(){
@@ -9,6 +20,9 @@ function formSubmission(){
 
 
 document.addEventListener('submit', event => {
-event.preventDefault()
-formSubmission()
+    event.preventDefault()
+    formSubmission()
 })
+
+
+

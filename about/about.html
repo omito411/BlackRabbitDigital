@@ -12,6 +12,12 @@
         <link rel="stylesheet" href="../style/style.css">
         <link rel="stylesheet" href="../style/media-queries.css">
         <link rel="stylesheet" href="myStyle.css">
+        <!-- jQuery script -->
+            <script src="jquery-3.6.0.js"></script>
+        <!-- JavaScript -->
+            <script src="script.js"></script>
+         
+     </script>
     </head>
     <body>
         <div>
@@ -29,7 +35,7 @@
                             <li class="link"><a href="../index.html" class="nav-link">Home</a></li>
                             <li class="link"><a href="about.html" class="nav-link current">About</a></li>
                             <li class="link"><a href="../portfolio/portfolio.html" class="nav-link">Portfolio</a></li>
-                            <li class="link"><a href="../services/services.html" class="nav-link">Services</a></li>
+                            <li class="link"><a href="../priceChecker/priceChecker.html" class="nav-link">PriceChecker</a></li>
                             <li class="link"><a href="../contact/contact.html" class="nav-link">Contact</a></li>
                         </ul>
                         <i class="fas fa-search search"></i>
@@ -43,7 +49,7 @@
             <div class="container">
                 <div class="intro-text line">
                     <h1>Black Rabbit Digital</h1>
-                    <a href="#" class="btn btn-dark">About Us</a>
+                    <button class="static-btn">About Us</button>
                 </div>
             </div>
         </section>
@@ -54,8 +60,6 @@
                     <h2>Our Story</h2>
                     <br>
                 </div>
-            <div>
-            <div>
                 <h3 class="about-text">We are a team of three software developers who formed a full-stack, SEO friendly digital agency. Our joint mission is to provide
                     a exceptional web development experiences to transform your business. Our expert web development team was established during our 
                     time as software development students at NCI (National College of Ireland). Read below to find out a bit more about what each of 
@@ -63,82 +67,67 @@
                 </h3>
             </div> 
         </section>   
-
             <!-- Heading About Us -->
         <section>
             <div class="container">
                 <div class="heading line">
                     <h2>Who We Are</h2>
                     <br>
-                </div>
-            <div>
-            <!-- About Stephen -->
-                    <div class="flex-container about-container">
-                        <div class="flex-item-left">
-                            <h1><b>Stephen Omitogun</b></h1>
-                            <br>
-                            <h3>Developer</h3>
-                            <br>
-                            <p class="alternate-about-blurb">Stephen has a background in life-science and transitioned to the coding world. His favourite things to do are football, hiking, walks with his Golden Retriever (Nala) and also outings with friends. </p>
-                            <br>
-                            <br>
-                            <br>
-                        </div>
-                        <div class="flex-item-right">
-                            <img src="../images/resized-image-stephen.jpg" alt="photo of Stephen" class="about-img">
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-            <!-- About Dara -->
-                    <div class="flex-container">
-                        <div class="flex-item-left">
-                            <img src=".." alt="photo of Dara" class="about-img">
-                        </div>
-                        <div class="flex-item-right about-blurb">
-                            <h1><b>Dara O'Heocha</b></h1>
-                            <br>
-                            <h3>Title</h3>
-                            <br>
-                            <br>
-                            <p>About Dara..</p>
-                            <br>
-                            <br>
-                            <br>
-                        </div>      
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-            <!-- About Aisling -->
-                    <div class="flex-container about-container">
-                        <div class="flex-item-left">
-                            <h1><b>Aisling Dwyer</b></h1>
-                            <br>
-                            <h3>Developer</h3>
-                            <br>
-                            <p class="alternate-about-blurb">Aisling comes from a background in the health and wellness industry. She first started coding in early 2021 and has been hooked since. Her knowledge base continues to grow through her formal studies in NCI (National College of Ireland).</p>
-                            <br>
-                            <br>
-                            <br>
-                        </div>
-                        <div class="flex-item-right">
-                            <img src="../images/resized-image-aisling.jpg" alt="photo of Aisling" class="about-img">
-                        </div>
-                    <br>
-                    <br>
+                    <button class="about-click static-btn">Click to Meet the Team</button>
                 </div>
             </div>
-            <div>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!-- About Stephen -->
+            <div id="div1" class="flex-container about-container">
+                <div class="flex-item-left">
+                    <h1><b>Stephen Omitogun</b></h1>
+                    <br>
+                    <h3>Developer</h3>
+                    <br>
+                    <p class="alternate-about-blurb">Stephen has a background in life-science and transitioned to the coding world. His favourite things to do are football, hiking, walks with his Golden Retriever (Nala) and also outings with friends. </p>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <div class="flex-item-right">
+                    <img src="../images/resized-image-stephen.jpg" alt="photo of Stephen" class="about-img">
+                </div>
+            </div>
+            <!-- About Dara -->
+            <div id="div2" class="flex-container">
+                <div class="flex-item-left">
+                    <img src="../images/image-dara.jpeg" alt="photo of Dara" class="about-img">
+                </div>
+                <div class="flex-item-right about-blurb">
+                    <h1><b>Dara O'Heocha</b></h1>
+                    <br>
+                    <h3>Marketing and Design</h3>
+                    <br>
+                    <br>
+                    <p>Dara’s background is in marketing and web design. He has three years of experience in developing SEO enabled websites for companies and individuals. Dara loves hiking and exploring nature.</p>
+                    <br>
+                    <br>
+                    <br>
+                </div>      
+            </div>
+            <!-- About Aisling -->
+            <div id="div3" class="flex-container about-container">
+                <div class="flex-item-left">
+                    <h1><b>Aisling Dwyer</b></h1>
+                    <br>
+                    <h3>Developer</h3>
+                    <br>
+                    <p class="alternate-about-blurb">Aisling comes from a background in the health and wellness industry. She first started coding in early 2021 and has been hooked since. Her knowledge base continues to grow through her formal studies in NCI (National College of Ireland).</p>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <div class="flex-item-right">
+                    <img src="../images/resized-image-aisling.jpg" alt="photo of Aisling" class="about-img">
+                </div>
             </div>
         </section>
             <!-- Homepage contact section-->
@@ -158,14 +147,14 @@
                     </div>
                     <form method="POST">
                     <div>
-                        <input type="text" placeholder="Name" id="name">Name:</input>
+                        <input type="text" placeholder="Name" id="name" required>Name:</input>
                     </div>
                     <div>
-                        <input type="email" placeholder="Email" id="email">Email:</input>
+                        <input type="email" placeholder="Email" id="email" required>Email:</input>
                     </div>
-                    </form>
-                    <!-- button to submit for mini contact form-->
-                    <a href="#" class="btn">Submit</a>
+                     <!-- button to submit for mini contact form-->
+                    <button type="submit" class="btn">Submit</a>
+                    </form>        
             </div>
         </section>
         </main>
@@ -183,5 +172,6 @@
                 </form>
             </div>
         </div>
+        
     </body>
  </html>
