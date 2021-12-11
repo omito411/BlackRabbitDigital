@@ -3,8 +3,14 @@
 
 document.addEventListener('submit', event => {
 event.preventDefault()
-hideContactForm()
-
+if(!checkNameInput()){
+    alert("Invalid input. Your name is required in the 'Name' field.");
+    document.getElementById("name").style.backgroundColor = "yellow";
+}
+else{
+    checkPhoneInput()
+}
+ 
 })
 
 function hideContactForm(){
@@ -19,5 +25,20 @@ function formSubmission(){
  document.getElementById("contact-form").innerHTML += response;
 }
 
+function checkNameInput(){
+    var alphaExp = /^[a-zA-Z]+$/;
+    var name = document.getElementById("name")
+    return name.value.match(alphaExp)
+}
 
-
+function checkPhoneInput(){
+    var phoneNumber = document.getElementById("phone")
+    var numericExpression = /^[0-9]+$/;
+    if (phoneNumber.value.match(numericExpression)) {
+        hideContactForm()
+    }
+    else {
+        alert("Invalid phone number. Please enter numeric value.");
+        document.getElementById("phone").style.backgroundColor = "yellow";
+    }
+}
