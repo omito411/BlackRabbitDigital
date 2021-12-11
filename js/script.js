@@ -118,8 +118,3 @@ AOS.init({
 })
 
 
-//Price Checker Form
-function validateForm(){
-    alert('hello');
-
-}
