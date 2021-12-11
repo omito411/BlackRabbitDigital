@@ -141,6 +141,8 @@ nav .logo{
 #intro .container {
     background: url('../images/background.jpeg') no-repeat;
     background-position-x: 70%;
+   /* background-position-y: 40%; */
+    background-size: 100%;
 }
 .line{
     position: relative;
@@ -504,7 +506,7 @@ nav .logo{
     color: var(--pink);
 }
 
-/* Footer section */
+/* Footer/Contact section */
 #contact {
     background-color: var(--dark-grey);
     padding: 10rem 0;

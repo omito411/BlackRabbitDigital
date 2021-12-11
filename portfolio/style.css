@@ -11,14 +11,22 @@
     --dark-grey: #222831;
     --pink:#e9204f;
 }
-.heading > *{
-    padding-bottom: 2rem;
-}
-.heading h1{
-    font-size: 5rem;
+/* intro section */
+
+.static-btn{
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-top: 2rem;
+    color: var(--white);
+    border: 4px solid black;
+    background-color: var(--pink);
 }
+
+/* portfolio text box */
+/* portfolio text box */
+/* portfolio text box */
+
 #portfolio-header{
     width: 100%;
     background-color: var(--black);
@@ -29,6 +37,7 @@
 #portfolio-header .container {
         background: url("background.jpeg") no-repeat;
         background-position-y: 40%;
+        background-size: 100%;
 }
 
 .portfolio {
@@ -71,6 +80,10 @@
     margin-bottom: 5rem;
     padding-bottom: 2rem;
 }
+
+/* portfolio Images */
+/* portfolio Images */
+/* portfolio Images */
 
 .portfolio-image{
     margin-top: 1rem;
