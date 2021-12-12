@@ -11,6 +11,7 @@
         <!-- Style CSS -->
         <link rel="stylesheet" href="../style/style.css">
         <link rel="stylesheet" href="../style/media-queries.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">        
         <link rel="stylesheet" href="mystyle.css">
         <!--Javascript-->
         <script src = "script.js"></script>
@@ -51,23 +52,21 @@
         </section>
         <section>
             <div class="container">
-                <div class="heading line row">
-                    <h2>Make an Enquiry</h2>
+                <div class="heading line row" id = "header-text">
+                    <h2>Find The Price</h2>
                 </div>
             <div>
         </section>
             <!-- Form -->
         <section id="services-form">
             <div class="form-container container">
-                <div class="form-text col">
+                <div class = "row">
+                <div class="form-text col-7">
                     <form onsubmit="return false">
                         <div class = "row questions">
-                            <h2 class="form-intro">Please fill in the form below and we will get in touch as soon as we can. <br><br/>We look forward to working with you.</h2>                   
+                            <h2 class="form-intro">Fill out the details below to get a price for your project. <br><br/>We look forward to working with you.</h2>                   
                             </div>
                             <div>
-                                <br>
-                                <p id="fineprint"><sup class="red-text">*</sup>mandatory field - please fill in</p>
-                                <br>
                                 <br>
                                 <labeL class="required">Enter your name: </labeL>
                                 <input class = "inputs" type="text" placeholder="Name" id="name" required/>
@@ -77,17 +76,14 @@
                                 <input class = "inputs"type="text" placeholder="Email address" id="email" required/>
                                 <br>
                                 <br>
-                                <labeL>Enter the details of your enquiry here: </labeL>
-                                <input class = "inputs" type="text" placeholder="Your enquiry..." id="enquiry">
-                                <br>
-                                <br>
                                 <labeL>Number of Web Pages: </labeL>
                                 <input class = "inputs" type="number" placeholder="# of web pages" id="num-web-pages"/>
                                 <br>
                                 <br>
                             </div>
+                            <br>
                             <div class = "checkbox-container row">
-                                <labeL>Website Requirements</labeL><br>
+                                <p><b>Website Requirements</b></p><br><br>
                                 <labeL class = "checkboxes">SEO</labeL><input type="checkbox" id="seo"/>
                                 <labeL class = "checkboxes">Graphic Design</labeL><input type="checkbox" id="graphic-design"/>
                                 <labeL class = "checkboxes">Google Ad Optimisation</labeL><input type="checkbox" id="google-ads"/>
@@ -97,27 +93,86 @@
                             </div>
                             <br>
                             <br>
-                            <button onclick="servicesCalculate()">Submit</button>
+                            <button class = "static-btn col" onclick="servicesCalculate()">Submit</button>
+                            <button class = "static-btn col" onclick="sendEmail()">Send Email</button>
+
                             <br>
                             <br>
                     </form>
-                </div>
-                
-                <div class = "col">
-                    <div class = "row">
-                        hello
-                    </div>
                     
                 </div>
-                
+
+                <div class = "col" >
+                    <div class = "card">
+                    <h2>
+                        Find out how much your website will cost with our Price checker!
+                    </h2>
+                    <br>
+                    <p><b>Your Website will cost:</b></p>
+                    <p id = "message">?</p>
+                    
+                </div>
+                <img src = "Coding-image-long.jpg" id = "coding-image">
+            </div>
+            
+            </div>   
+                </div>
             </div>
         </section>
-        <div class = "container">
-            <p id = "message">message</p>
-        </div>
+            <div class = "container-fluid black-background">
+                <div class = "row">
+                    <div class = "col">
+                    <h2 class = "services-header" >Our Services</h2>
+                </div>
+                </div>
+                <div class = "row">
+                    <div class = "col">
+                        <div class="card w-75" data-aos="fade-up">
+                            <div class="card-body">
+                                
+                              <h2 class="card-title">Web Design</h2>
+                              <p class="card-text">We design quality SEO driven websites for your needs.</p>
+                              <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                          </div>
+                          
 
-        <!-- Homepage contact section-->
-        <section id="contact">
+                    </div>
+                    <div class = "col">
+                        <div class="card w-75" id = "card-margin">
+                            <div class="card-body">
+                              <h2 class="card-title">Branding</h2>
+                              <p class="card-text">We will design a logo and branding documents for your company.</p>
+                              <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                          </div>
+                    </div>
+
+                </div>
+                <div class = "row">
+                <div class = "col">
+                    <div class="card w-75" >
+                        <div class="card-body">
+                          <h2 class="card-title">Graphic Design</h2>
+                          <p class="card-text">Print and Digital Media for your business needs.</p>
+                          <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                      </div>
+                </div>
+                <div class = "col">
+                    <div class="card w-75" id = "card-margin">
+                        <div class="card-body">
+                          <h2 class="card-title">Branding</h2>
+                          <p class="card-text">We will design a logo and branding documents for your company.</p>
+                          <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            </div>
+
+           <!-- Homepage contact section-->
+           <section id="contact">
             <div class="container">
                 <div class="contact">
                     <!-- Icons -->
@@ -127,11 +182,20 @@
                         <i class="fab fa-instagram"></i>
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <!-- text -->
-                    <h2>Contact Us</h2>
-                    <!-- button to contact form-->
-                    <a href="#" class="btn">Contact form</a>
-                </div>
+                     <!-- mini contact form -->
+                    <div>
+                     <h2>Get in Touch</h2>
+                    </div>
+                    <form method="POST">
+                    <div>
+                        <input type="text" placeholder="Name" id="name" required>Name:</input>
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Email" id="email" required>Email:</input>
+                    </div>
+                     <!-- button to submit for mini contact form-->
+                    <button type="submit" class="btn">Submit</a>
+                    </form>        
             </div>
         </section>
         </main>
@@ -149,6 +213,8 @@
                 </form>
             </div>
         </div>
-        <script src="script.js></script>
+                <!-- Script Source Files -->
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                <script src="js/script.js"></script>
     </body>   
 </html>
