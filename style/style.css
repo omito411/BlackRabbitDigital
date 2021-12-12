@@ -960,12 +960,34 @@ form i{
   }
   
   
-  
-  ::placeholder{
+  input[id^="contact-name"]::placeholder{
     font-style: italic;
     font-size: medium;
     color: black;
-    
+  }
+
+  input[id^="contact-email"]::placeholder{
+    font-style: italic;
+    font-size: medium;
+    color: black;
+  }
+  
+  input[id^="phone"]::placeholder{
+    font-style: italic;
+    font-size: medium;
+    color: black;
+  }
+
+  input[id^="company"]::placeholder{
+    font-style: italic;
+    font-size: medium;
+    color: black;
+  }
+
+  input[id^="enquiry"]::placeholder{
+    font-style: italic;
+    font-size: medium;
+    color: black;
   }
   
   
