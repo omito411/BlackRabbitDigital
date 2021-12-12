@@ -222,6 +222,11 @@ nav .logo{
     padding-bottom: 3rem;
 }
 
+.card p {
+    font-size: 1.2rem; 
+    font-weight: 45000;
+}
+
 .heading-2 {
     font-size: 2.3rem;
     font-weight: 700;
@@ -483,24 +488,24 @@ nav .logo{
 }
 
 /* Our work text */
-.portfolio_text-container{
+.sample_portfolio_text-container{
     display: flex;
     text-align: center;
     justify-content: center;
     margin: 0 auto;
 }
 
-.portfolio-text {
+.sample-text {
     padding-bottom: 2rem;
 }
 
-.portfolio-text h2{
+.sample-text h2{
     font-size: 5rem;
     font-weight: 700;
     margin-top: 4rem;
 }
 
-.portfolio-text p{
+.sample-text p{
     font-size: 1.8 rem;
     font-weight: 700;
     color: var(--pink);
@@ -642,7 +647,8 @@ form i{
 }
 #portfolio-header .container {
         background: url("../images/background.jpeg") no-repeat;
-        background-position-y: 40%;
+        background-position-x: 70%;
+        /* background-position-y: 40%; */
         background-size: 100%;
 }
 
