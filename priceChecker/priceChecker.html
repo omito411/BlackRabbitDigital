@@ -12,9 +12,7 @@
         <link rel="stylesheet" href="../style/style.css">
         <link rel="stylesheet" href="../style/media-queries.css">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">        
-        <link rel="stylesheet" href="mystyle.css">
-        <!--Javascript-->
-        <script src = "script.js"></script>
+
     </head>
     <body>
         <div>
@@ -46,7 +44,7 @@
             <div class="container">
                 <div class="intro-text line">
                     <h1>Black Rabbit Digital</h1>
-                    <a href="#services-form" class="btn btn-dark">Contact</a>
+                    <a href="#services-form" class="btn btn-dark">Check the Price</a>
                 </div>
             </div>
         </section>
@@ -61,23 +59,23 @@
         <section id="services-form">
             <div class="form-container container">
                 <div class = "row">
-                <div class="form-text col-7">
+                <div class="form-text col-7 button-div">
                     <form onsubmit="return false">
                         <div class = "row questions">
-                            <h2 class="form-intro">Fill out the details below to get a price for your project. <br><br/>We look forward to working with you.</h2>                   
+                            <h2 class="form-intro-price">Fill out the details below to get a price for your project. <br><br>We look forward to working with you.</h2>                   
                             </div>
                             <div>
                                 <br>
                                 <labeL class="required">Enter your name: </labeL>
-                                <input class = "inputs" type="text" placeholder="Name" id="name" required/>
+                                <input class = "inputs-dara"  type="text"  id="name" required/>
                                 <br>
                                 <br>
                                 <labeL class="required">Enter your email address: </labeL>
-                                <input class = "inputs"type="text" placeholder="Email address" id="email" required/>
+                                <input class = "inputs-dara"type="text"  id="email" required/>
                                 <br>
                                 <br>
                                 <labeL>Number of Web Pages: </labeL>
-                                <input class = "inputs" type="number" placeholder="# of web pages" id="num-web-pages"/>
+                                <input class = "inputs-dara" type="number" id="num-web-pages"/>
                                 <br>
                                 <br>
                             </div>
@@ -93,9 +91,10 @@
                             </div>
                             <br>
                             <br>
-                            <button class = "static-btn col" onclick="servicesCalculate()">Submit</button>
-                            <button class = "static-btn col" onclick="sendEmail()">Send Email</button>
-
+                            <div class = "button-div">
+                                <button class = "static-btn col" onclick="servicesCalculate()">Submit</button>
+                                <button class = "static-btn col" onclick="sendEmail()">Send Email</button>
+                            </div>
                             <br>
                             <br>
                     </form>
@@ -103,7 +102,7 @@
                 </div>
 
                 <div class = "col" >
-                    <div class = "card">
+                    <div class = "card card-dara shadow">
                     <h2>
                         Find out how much your website will cost with our Price checker!
                     </h2>
@@ -112,7 +111,7 @@
                     <p id = "message">?</p>
                     
                 </div>
-                <img src = "Coding-image-long.jpg" id = "coding-image">
+                <img src = "../images/Coding-image-long.jpg" id = "coding-image">
             </div>
             
             </div>   
@@ -124,10 +123,10 @@
                     <div class = "col">
                     <h2 class = "services-header" >Our Services</h2>
                 </div>
-                </div>
+            </div>
                 <div class = "row">
                     <div class = "col">
-                        <div class="card w-75" data-aos="fade-up">
+                        <div class="card card-dara w-75" data-aos="fade-in">
                             <div class="card-body">
                                 
                               <h2 class="card-title">Web Design</h2>
@@ -138,32 +137,32 @@
                           
 
                     </div>
-                    <div class = "col">
-                        <div class="card w-75" id = "card-margin">
-                            <div class="card-body">
-                              <h2 class="card-title">Branding</h2>
-                              <p class="card-text">We will design a logo and branding documents for your company.</p>
-                              <a href="#" class="btn btn-primary">Learn More</a>
+                        <div class = "col">
+                            <div class="card card-dara w-75" data-aos="fade-in" id = "card-margin">
+                                <div class="card-body">
+                                <h2 class="card-title">Branding</h2>
+                                <p class="card-text">We will design a logo and branding documents for your company.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                                </div>
                             </div>
-                          </div>
-                    </div>
+                        </div>
 
                 </div>
-                <div class = "row">
-                <div class = "col">
-                    <div class="card w-75" >
-                        <div class="card-body">
-                          <h2 class="card-title">Graphic Design</h2>
-                          <p class="card-text">Print and Digital Media for your business needs.</p>
-                          <a href="#" class="btn btn-primary">Learn More</a>
+                    <div class = "row">
+                        <div class = "col">
+                            <div class="card card-dara w-75" data-aos="fade-in" >
+                                <div class="card-body">
+                                <h2 class="card-title">Graphic Design</h2>
+                                <p class="card-text">Print and Digital Media for your business needs.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
                         </div>
-                      </div>
-                </div>
+                    </div>
                 <div class = "col">
-                    <div class="card w-75" id = "card-margin">
+                    <div class="card card-dara w-75" data-aos="fade-in" id = "card-margin">
                         <div class="card-body">
-                          <h2 class="card-title">Branding</h2>
-                          <p class="card-text">We will design a logo and branding documents for your company.</p>
+                          <h2 class="card-title">Advertisement</h2>
+                          <p class="card-text">We will optimise your social media and online presence.</p>
                           <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
                       </div>
@@ -213,8 +212,11 @@
                 </form>
             </div>
         </div>
-                <!-- Script Source Files -->
-                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-                <script src="js/script.js"></script>
+        <!--Javascript-->
+        <script src = "../js/PriceCheckerScript.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
     </body>   
 </html>
