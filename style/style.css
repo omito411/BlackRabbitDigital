@@ -1008,20 +1008,50 @@ form i{
     color: black;
   }
   
-  
-form label {
-    width: 50%;
-    font-size: large;
-}
-
-/* (Aisling)form input {
+  input[id^="contact-name"] {
     width: 50%;
     height: 50px;
     color: black;
     box-sizing: border-box;
     border: 4px solid var(--pink);
-} */
+} 
+
+input[id^="contact-email"] {
+    width: 50%;
+    height: 50px;
+    color: black;
+    box-sizing: border-box;
+    border: 4px solid var(--pink);
+} 
+
+input[id^="phone"] {
+    width: 50%;
+    height: 50px;
+    color: black;
+    box-sizing: border-box;
+    border: 4px solid var(--pink);
+} 
+
+input[id^="company"] {
+    width: 50%;
+    height: 50px;
+    color: black;
+    box-sizing: border-box;
+    border: 4px solid var(--pink);
+} 
+
+input[id^="enquiry"] {
+    width: 50%;
+    height: 50px;
+    color: black;
+    box-sizing: border-box;
+    border: 4px solid var(--pink);
+} 
   
+form label {
+    width: 50%;
+    font-size: large;
+}
 
 /* Media-queriesss */
 
