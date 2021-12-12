@@ -117,7 +117,7 @@ nav .logo{
 }
 
 .search{
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 .close{
@@ -172,7 +172,7 @@ nav .logo{
 .btn{
     display: inline-block;
     padding: 1.5rem 3rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--white);
     border: 2px solid var(--pink);
@@ -278,7 +278,7 @@ nav .logo{
 #countdown{
     display: inline-block;
     padding: 1.5rem 3rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     text-align: center;
     color: var(--white);
@@ -321,7 +321,7 @@ nav .logo{
 }
 
 .heading p{
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--pink);
 }
@@ -417,7 +417,7 @@ nav .logo{
 .carousel-container{
     max-width: 900px;
     margin: 0 auto;
-    padding-top: 0.5;
+    padding-top: 0.5rem;
     padding-bottom: 0;
     
 }
@@ -532,7 +532,7 @@ nav .logo{
     border-radius: 50%;
     margin: 2px;
     cursor: pointer;
-    transform: all .3s;
+    transition: all .3s;
 }
 
 .contact i:hover{
@@ -728,7 +728,7 @@ form i{
 .static-btn{
     display: inline-block;
     padding: 1.5rem 3rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--white);
     border: 4px solid black;
@@ -746,7 +746,7 @@ form i{
 .static-btn{
     display: inline-block;
     padding: 1.5rem 3rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--white);
     border: 4px solid black;
@@ -853,7 +853,7 @@ form i{
     opacity: 1;
     transition: .3s;
 }
-
+/*
 #footers{
     display: flex;
     justify-content: space-between;
@@ -878,12 +878,13 @@ form i{
     border-radius: 50%;
     margin: 2px;
     cursor: pointer;
-    transform: all .3s;
+    transition: all .3s;
 }
 
 #footers i:hover{
     transform: translateY(-1rem);
 }
+*/
 
 /* Contact Page */
 /* Contact Page */
@@ -913,7 +914,7 @@ form i{
 .static-btn{
     display: inline-block;
     padding: 1.5rem 3rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--white);
     border: 4px solid black;
@@ -1038,7 +1039,7 @@ form label {
     }
     .nav-ul li{
         width:100%;
-        text-decoration: center;
+        text-decoration:none;
         border-top: 1px solid rgba(255,255,255,0.4);
 
     }
