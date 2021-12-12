@@ -738,30 +738,7 @@ form i{
 
 
 
-@media (max-width: 830px) {
-    .flex-container {
-      flex-direction: column;
-    }
 
-    .flex-item-left, .flex-item-right {
-        width:100%;
-
-    }
-}
-
-@media (max-width: 480px) {
-    .about-blurb, .alternate-about-blurb {
-        font-size: small;
-    }
-}
-
-@media (max-width: 380px) {
-      .about-img{
-          height: 130px;
-          width: 130px;
-          margin:auto;
-      }
-} 
 
 /* Portfolio page */
 /* Portfolio page */
@@ -1110,3 +1087,28 @@ form label {
         margin: 3rem 0;
     }
 }
+
+@media (max-width: 830px) {
+    .flex-container {
+      flex-direction: column;
+    }
+
+    .flex-item-left, .flex-item-right {
+        width:100%;
+
+    }
+}
+
+@media (max-width: 480px) {
+    .about-blurb, .alternate-about-blurb {
+        font-size: small;
+    }
+}
+
+@media (max-width: 380px) {
+      .about-img{
+          height: 130px;
+          width: 130px;
+          margin:auto;
+      }
+} 
