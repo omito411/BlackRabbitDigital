@@ -738,8 +738,6 @@ form i{
 
 
 
-
-
 /* Portfolio page */
 /* Portfolio page */
 /* Portfolio page */
@@ -1087,7 +1085,6 @@ form label {
         margin: 3rem 0;
     }
 }
-
 @media (max-width: 830px) {
     .flex-container {
       flex-direction: column;
