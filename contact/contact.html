@@ -11,7 +11,6 @@
         <!-- Style CSS -->
         <link rel="stylesheet" href="../style/style.css">
         <link rel="stylesheet" href="../style/media-queries.css">
-        <link rel="stylesheet" href="mystyle.css">
     </head>
     <body>
         <div>
@@ -47,6 +46,7 @@
                 </div>
             </div>
         </section>
+        <!-- Page Heading -->
         <section>
             <div class="container">
                 <div class="heading line">
@@ -56,7 +56,7 @@
         </section>
             <!-- Form -->
         <section id="contact-form">
-            <div class="form-container">
+            <div class="contact-form-container">
                 <div id="submission-response" class="form-text">
                     <form method="POST">
                     <h1 class="form-intro">Please fill in the form below and we will get in touch as soon as we can. <br/>We look forward to working with you.</h1>                   
@@ -65,23 +65,23 @@
                         <br>
                         <br>
                         <label class="required">Enter your name: </label>
-                        <input type="text" placeholder="Name" id="name" required/>
+                        <input type="text" placeholder="Name" id="name" class="contact-input" required/>
                         <br>
                         <br>
                         <label class="required">Enter your email address: </label>
-                        <input type="email" placeholder="Email address" id="email" required/>
+                        <input type="email" placeholder="Email address" id="email" class="contact-input" required/>
                         <br>
                         <br>
                         <label class="required">Enter your phone number: </label>
-                        <input type="tel" placeholder="Phone number" id="phone" required/>
+                        <input type="tel" placeholder="Phone number" id="phone" class="contact-input" required/>
                         <br>
                         <br>
                         <label>Enter your company name: </label>
-                        <input type="text" placeholder="Company name"/>
+                        <input type="text" placeholder="Company name" id="company" class="contact-input"/>
                         <br>
                         <br>
                         <label>Enter the details of your enquiry here: </label>
-                        <input type="text" placeholder="Your enquiry...">
+                        <input type="text" placeholder="Your enquiry..." id="enquiry" class="contact-input">
                         <br>
                         <br>
                         <button type="submit" id="contact-submit-btn" class="btn">Submit</button>
@@ -121,6 +121,6 @@
                 </form>
             </div>
         </div>
-        <script src="script.js"></script>
+        <script src="../js/contact-script.js"></script>
     </body>   
 </html>
