@@ -139,7 +139,7 @@ nav .logo{
 }
 
 #intro .container {
-    background: url('../images/background.jpeg') no-repeat;
+    background: url('../images/background-small.jpeg') no-repeat;
     background-position-x: 70%;
    /* background-position-y: 40%; */
     background-size: 100%;
@@ -763,7 +763,7 @@ form i{
     z-index: -2;
 }
 #portfolio-header .container {
-        background: url("../images/background.jpeg") no-repeat;
+        background: url("../images/background-small.jpeg") no-repeat;
         background-position-x: 70%;
         /* background-position-y: 40%; */
         background-size: 100%;
