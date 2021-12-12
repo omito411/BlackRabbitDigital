@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/media-queries.css">
-    <link rel="stylesheet" href="style.css">
+    
 </head>
     <body>
         <header>
@@ -29,7 +29,7 @@
                         <li class="link"><a href="../index.html" class="nav-link">Home</a></li>
                         <li class="link"><a href="../about/about.html" class="nav-link">About</a></li>
                         <li class="link"><a href="portfolio.html" class="nav-link current">Portfolio</a></li>
-                        <li class="link"><a href="../priceChecker/priceChecker.html" class="nav-link">PriceChecker</a></li>
+                        <li class="link"><a href="../priceChecker/priceChecker.html" class="nav-link">PriceC</a></li>
                         <li class="link"><a href="../contact/contact.html" class="nav-link">Contact</a></li>
                     </ul>
                     <i class="fas fa-search search"></i>
@@ -37,15 +37,16 @@
             </div>
         </header>
         <main>
+            <!-- Top section -->
             <section id="portfolio-header">
                 <div class="container">
-                    <div class="heading line">
-                        <h1>Portfolio</h1>
-                        <p>WE TAKE YOUR EXPERIENCE TO THE NEXT LEVEL</p>
+                    <div class="intro-text line">
+                        <h1>Black Rabbit Digital</h1>
+                        <button class="static-btn">Portfolio</button>
                     </div>
                 </div>
             </section>
-            
+            <!-- portfolio text box-->
             <section id="portfolio" data-aos="fade-up"
             data-aos-duration="2000">
                 <div class="container">
@@ -82,6 +83,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Portfolio images-->
                 <div class="h-line"></div>
                 <div class="container">
                     <div class="row">
@@ -114,7 +116,7 @@
                     </div>
                 </div>
             </section>
-
+            <!-- contact section -->
             <section id="contact">
                 <div class="container">
                     <div class="contact">
@@ -125,11 +127,20 @@
                             <i class="fab fa-instagram"></i>
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <!-- text -->
-                        <h2>Contact Us</h2>
-                        <!-- button to contact form-->
-                        <a href="#" class="btn">Contact form</a>
-                    </div>
+                         <!-- mini contact form -->
+                        <div>
+                         <h2>Get in Touch</h2>
+                        </div>
+                        <form method="POST">
+                        <div>
+                            <input type="text" placeholder="Name" id="name" required>Name:</input>
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Email" id="email" required>Email:</input>
+                        </div>
+                         <!-- button to submit for mini contact form-->
+                        <button type="submit" class="btn">Submit</a>
+                        </form>        
                 </div>
             </section>
         </main>
@@ -157,7 +168,7 @@
 
         <!-- Script Source Files -->
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script src="../portfolio/script.js"></script>
+        <script src="../js/pscript.js"></script>
         <!-- End Script Source Files -->
     </body>
 </html>
