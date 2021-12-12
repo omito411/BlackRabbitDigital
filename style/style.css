@@ -1109,3 +1109,84 @@ form label {
           margin:auto;
       }
 } 
+
+
+
+.checkboxes{
+    text-align: left;
+  
+  }
+  .questions{
+    text-align: left;
+  }
+  .inputs-dara{
+    text-align: left;
+    width: 20em;
+    color:black;
+    border: 2px solid red;
+
+  }
+  
+  #header-text{
+    margin-bottom: -10%;
+  }
+  
+  #coding-image {
+    height: 600px;
+    margin-top: 10px;
+  }
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+      
+    }
+    .card-dara{
+      margin-top: 20%;
+    
+    }
+    #coding-image{
+      display: none;
+    }
+  }
+  
+  .services-header{
+    font-size :24px;
+    margin-bottom: 20px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    color:white;
+  }
+  
+  #card-margin{
+    margin-top: 20%;
+  }
+  
+  .odd{
+    background-color:#222831;
+  }
+  
+  .black-background{
+    background-color:#222831;
+  
+  }
+  .container-fluid{
+    padding-left: 10%;
+  }
+  #message{
+    text-align: center;
+    font-size: 40px;
+  }
+  
+  .price-checker-buttons{
+    text-align: left;
+  }
+  .shadow{
+    box-shadow: 20px 40px;}
+    
+  .button-div{
+    text-align: left;
+  }
+  .form-intro-price{
+      text-align: left;
+  }

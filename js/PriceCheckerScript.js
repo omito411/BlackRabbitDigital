@@ -1,8 +1,6 @@
 let price = 0;
 
-setTimeout(function(){
-    window.open('mailto:sales@blackrabbitdigtal.ie?subject=Online Quote&body=I have recieved a quote on your website for ');
-}, 500); 
+
 
 function servicesCalculate() {
     const name = document.getElementById('name');
@@ -37,9 +35,14 @@ function servicesCalculate() {
     }
     //output
     document.getElementById("message").innerHTML = "Your Website will cost €" + price;
+    goToTop();
 }
 
 function sendEmail(){
     window.open('mailto:sales@blackrabbitdigtal.ie?subject=Online Quote&body=I have recieved a quote on your website for ');
 
+}
+
+function goToTop(){
+    document.getElementById('#services-form').scrollIntoView(true);
 }
