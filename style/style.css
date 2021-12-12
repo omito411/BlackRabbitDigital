@@ -224,7 +224,6 @@ nav .logo{
 
 .card p {
     font-size: 1.2rem; 
-    font-weight: 45000;
 }
 
 .heading-2 {
@@ -322,7 +321,7 @@ nav .logo{
 }
 
 .heading p{
-    font-size: 1.8 rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--pink);
 }
@@ -1158,7 +1157,7 @@ form label {
     color:white;
   }
   
-  #card-margin{
+  .card-margin{
     margin-top: 20%;
   }
   

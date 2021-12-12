@@ -3,9 +3,8 @@ let price = 0;
 
 
 function servicesCalculate() {
-    const name = document.getElementById('name');
-    const  email = document.getElementById('email');
-    const  enquiry = document.getElementById('enquiry');
+    const name = document.getElementById('name-price');
+    const  email = document.getElementById('email-price');
     const  numWebPages = document.getElementById('num-web-pages').value;
     const  seo = document.getElementById('seo');
     const  graphicDesign = document.getElementById('graphic-design');
