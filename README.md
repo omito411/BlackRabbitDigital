@@ -1,2 +1,0 @@
-# BlackRabbitDigital
-Web Development Project
