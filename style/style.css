@@ -1028,7 +1028,79 @@ form label {
     font-size: large;
 }
 
-/* Media-queriesss */
+/* PriceChecker page */
+/* PriceChecker page */
+/* PriceChecker page */
+
+.checkboxes{
+    text-align: left;
+  
+  }
+  .questions{
+    text-align: left;
+  }
+  .inputs-dara{
+    text-align: left;
+    width: 20em;
+    color:black;
+    border: 2px solid red;
+
+  }
+  
+  #header-text{
+    margin-bottom: -10%;
+  }
+  
+  #coding-image {
+    height: 600px;
+    margin-top: 10px;
+  }
+  
+  
+  .services-header{
+    font-size :24px;
+    margin-bottom: 20px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    color:white;
+  }
+  
+  .card-margin{
+    margin-top: 20%;
+  }
+  
+  .odd{
+    background-color:#222831;
+  }
+  
+  .black-background{
+    background-color:#222831;
+  
+  }
+  .container-fluid{
+    padding-left: 10%;
+  }
+  #message{
+    text-align: center;
+    font-size: 40px;
+  }
+  
+  .price-checker-buttons{
+    text-align: left;
+  }
+  .shadow{
+    box-shadow: 20px 40px;}
+    
+  .button-div{
+    text-align: left;
+  }
+  .form-intro-price{
+      text-align: left;
+  }
+
+  /* Media-queriesss */
+  /* Media-queriesss */
+  /* Media-queriesss */
 
 @media screen and (max-width:600px) {
     .nav-ul {
@@ -1078,6 +1150,9 @@ form label {
     .image-text h3{
         font-size: 1.5rem;
     }
+    .image-text p{
+        font-size: 0.75rem;
+    }
     .contact{
         flex-direction: column;
     }
@@ -1103,39 +1178,14 @@ form label {
 }
 
 @media (max-width: 380px) {
-      .about-img{
+    .about-img{
           height: 130px;
           width: 130px;
           margin:auto;
-      }
+    }
 } 
 
-
-
-.checkboxes{
-    text-align: left;
-  
-  }
-  .questions{
-    text-align: left;
-  }
-  .inputs-dara{
-    text-align: left;
-    width: 20em;
-    color:black;
-    border: 2px solid red;
-
-  }
-  
-  #header-text{
-    margin-bottom: -10%;
-  }
-  
-  #coding-image {
-    height: 600px;
-    margin-top: 10px;
-  }
-  @media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     /* For mobile phones: */
     [class*="col-"] {
       width: 100%;
@@ -1148,45 +1198,4 @@ form label {
     #coding-image{
       display: none;
     }
-  }
-  
-  .services-header{
-    font-size :24px;
-    margin-bottom: 20px;
-    padding-top: 50px;
-    margin-bottom: 50px;
-    color:white;
-  }
-  
-  .card-margin{
-    margin-top: 20%;
-  }
-  
-  .odd{
-    background-color:#222831;
-  }
-  
-  .black-background{
-    background-color:#222831;
-  
-  }
-  .container-fluid{
-    padding-left: 10%;
-  }
-  #message{
-    text-align: center;
-    font-size: 40px;
-  }
-  
-  .price-checker-buttons{
-    text-align: left;
-  }
-  .shadow{
-    box-shadow: 20px 40px;}
-    
-  .button-div{
-    text-align: left;
-  }
-  .form-intro-price{
-      text-align: left;
-  }
+}
