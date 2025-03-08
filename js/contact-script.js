@@ -1,79 +1,50 @@
-
-//Submit button for form + validation
-
-document.addEventListener('submit', event => {
-event.preventDefault()
-if(!checkNameInput()){
-    alert("Invalid input. Your name is required in the 'Name' field.");
-    document.getElementById("contact-name").style.backgroundColor = "yellow";
-}
-else{
-    checkPhoneInput()
-}
- 
-})
-
-//name field validation
-function checkNameInput(){
-    var alphaExp = /^[a-zA-Z]+$/;
-    var name = document.getElementById("contact-name")
-    return name.value.match(alphaExp)
-}
-
-//phone field validation
-function checkPhoneInput(){
-    var phoneNumber = document.getElementById("phone")
-    var numericExpression = /^[0-9]+$/;
-    if (phoneNumber.value.match(numericExpression)) {
-        hideContactForm()
+// JavaScript for Contact Page functionality
+document.addEventListener("DOMContentLoaded", function() {
+    const contactForm = document.getElementById("contact-form");
+    const responseMessage = document.getElementById("form-response");
+    
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+            
+            if (name === "" || email === "" || message === "") {
+                responseMessage.innerHTML = "<p style='color: red;'>All fields are required.</p>";
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                responseMessage.innerHTML = "<p style='color: red;'>Please enter a valid email address.</p>";
+                return;
+            }
+            
+            // Simulate a successful form submission
+            responseMessage.innerHTML = "<p style='color: green;'>Thank you! Your message has been sent successfully.</p>";
+            contactForm.reset();
+        });
     }
-    else {
-        alert("Invalid phone number. Please enter numeric value.");
-        document.getElementById("phone").style.backgroundColor = "yellow";
+    
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
     }
-}
-
-// Response to form submission 
-function hideContactForm(){
-    document.getElementById("submission-response").style.display = "none";
-    formSubmission()
-  }
-
-function formSubmission(){
- var name = document.getElementById("contact-name").value
- var email = document.getElementById("contact-email").value
- var response = "Thank you, <span class='hyperlink-text'>"+name+"</span>, for your enquiry. <br><br>We will be in contact with you shortly to address your enquiry via the given email address, <span class='hyperlink-text'>" +email+"</span>. <br><br>To send another message, click <a class='hyperlink-text' href='contact.html'>here</a>.";
- document.getElementById("contact-form").innerHTML += response;
-}
-
-// New Toggler 
-const hamburger = document.querySelector(".hamburger");
-const close = document.querySelector(".close");
-const navUL = document.querySelector(".nav-ul");
-
-hamburger.addEventListener("click", () => {
-    navUL.classList.toggle("show");
-    hamburger.classList.toggle("hide");
+    
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById("hamburger-menu");
+    const navMenu = document.getElementById("nav-menu");
+    const closeMenu = document.getElementById("close-menu");
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    }
+    if (closeMenu) {
+        closeMenu.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+        });
+    }
 });
-
-close.addEventListener("click", () => {
-    navUL.classList.toggle("show");
-    hamburger.classList.toggle("hide");
-});
-
-
-// Search Modal 
-const btn = document.querySelector(".search");
-const closeModal = document.querySelector(".close-modal");
-
-btn.addEventListener("click", openPopup);
-closeModal.addEventListener("click", closePopup);
-
-function openPopup(e) {
-    e.preventDefault();
-    modal.style.display = "block";
-}
-
-function closePopup() {
-    modal.style.display = "none";
-}

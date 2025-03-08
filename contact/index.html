@@ -1,126 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Black Rabbit Digital | Contact</title>
-        <link rel="shortcut icon" href="../images/BRD.ico">
-        <!-- Bootstrap CSS + Font icons -->
-        <link rel="stylesheet" href="../style/bootstrap.min.css">
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="../style/style.css">
-    </head>
-    <body>
-        <div>
-            <header>
-                <div class="container-fluid">
-                    <nav>
-                        <img src="../images/BRD.png" alt="logo" class="logo">
-                        <!--hamburger togger-->
-                        <div class="hamburger">
-                            <i class="fas fa-bars"></i>
-                        </div>
-                    <!-- Navigation-->
-                    <ul class="nav-ul">
-                        <i class="fas fa-times close"></i>
-                        <li><a href="../" class="nav-link">Home</a></li>
-                        <li><a href="../about/" class="nav-link">About</a></li>
-                        <li><a href="../portfolio/" class="nav-link">Portfolio</a></li>
-                        <li><a href="../priceChecker/" class="nav-link">PriceChecker</a></li>
-                        <li><a href="index.html" class="nav-link current">Contact</a></li>
-                    </ul>
-                    <i class="fas fa-search search"></i>
-                    </nav>	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Rabbit Digital | Contact</title>
+    <link rel="shortcut icon" href="../images/BRD.ico">
+    <link rel="stylesheet" href="../style/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <nav>
+                <img src="../images/BRD.png" alt="Black Rabbit Digital Logo" class="logo">
+                <div class="hamburger" id="hamburger-menu">
+                    <i class="fas fa-bars"></i>
                 </div>
-            </header>
+                <ul class="nav-ul" id="nav-menu">
+                    <i class="fas fa-times close" id="close-menu"></i>
+                    <li class="link"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="link"><a href="../about.html" class="nav-link">About</a></li>
+                    <li class="link"><a href="../portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li class="link"><a href="../priceChecker.html" class="nav-link">Price Checker</a></li>
+                    <li class="link"><a href="contact.html" class="nav-link current">Contact</a></li>
+                </ul>
+                <i class="fas fa-search search" id="search-icon"></i>
+            </nav>
         </div>
-        <main>
-            <!-- Top section -->
-        <section id="intro">
+    </header>
+
+    <main>
+        <section id="contact-intro">
             <div class="container">
-                <div class="intro-text line">
-                    <h1>Black Rabbit Digital</h1>
-                    <h2 class="static-btn">Contact</h2>
+                <div class="intro-text">
+                    <h1>Contact Us</h1>
+                    <p>We’d love to hear from you. Get in touch with us today.</p>
                 </div>
             </div>
         </section>
-        <!-- Page Heading -->
-        <section>
+
+        <section id="contact-form" data-aos="fade-up">
             <div class="container">
-                <div class="heading line">
-                    <h2>Make an Enquiry</h2>
-                </div>
-            </div>
-        </section>
-            <!-- Form -->
-        <section id="contact-form">
-            <div class="contact-form-container">
-                <div id="submission-response" class="form-text">
-                    <form method="POST">
-                    <h1 class="form-intro">Please fill in the form below and we will get in touch as soon as we can. <br/>We look forward to working with you.</h1>                   
-                        <br>
-                        <p id="fineprint"><sup class="red-text">*</sup>mandatory field - please fill in</p>
-                        <br>
-                        <br>
-                        <label class="required">Enter your name: </label>
-                        <input type="text" placeholder="Name" id="contact-name" class="contact-input" required/>
-                        <br>
-                        <br>
-                        <label class="required">Enter your email address: </label>
-                        <input type="email" placeholder="Email address" id="contact-email" class="contact-input" required/>
-                        <br>
-                        <br>
-                        <label class="required">Enter your phone number: </label>
-                        <input type="tel" placeholder="Phone number" id="phone" class="contact-input" required/>
-                        <br>
-                        <br>
-                        <label>Enter your company name: </label>
-                        <input type="text" placeholder="Company name" id="company" class="contact-input"/>
-                        <br>
-                        <br>
-                        <label>Enter the details of your enquiry here: </label>
-                        <input type="text" placeholder="Your enquiry..." id="enquiry" class="contact-input">
-                        <br>
-                        <br>
-                        <button type="submit" id="contact-submit-btn" class="btn">Submit</button>
-                        <br>
-                        <br>
-                    </form>
-                </div>
-            </div>
-        </section>
-        <!-- Homepage contact section-->
-        <section id="contact">
-            <div class="container">
-                <div class="contact">
-                    <!-- Icons -->
-                    <div id="contact-social-media" class="contact-icon">
-                        <i class="fab fa-facebook"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-instagram"></i>
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <!-- text -->
-                </div>
-            </div>
-        </section>
-        </main>
-        <footer>
-            <div class="container">
-                <p>2021 &copy; BlackRabbitDigital. All rights reserved.</p>
-            </div>
-        </footer>
-        <div class="search-modal" id="modal">
-            <span class="close-modal">&times;</span>
-            <div class="modal-content">
-                <form method="POST">
-                    <input type="text" placeholder="Search"/>
-                    <i class="fas fa-search search"></i>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" rows="5" required></textarea>
+                    
+                    <button type="submit" class="btn btn-dark">Send Message</button>
                 </form>
+                <div id="form-response"></div>
             </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Black Rabbit Digital. All rights reserved.</p>
         </div>
-        
-        <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
-        <script src="../js/contact-script.js"></script>
-    </body>   
+    </footer>
+
+    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/contact-script.js"></script>
+    <script>AOS.init();</script>
+</body>
 </html>

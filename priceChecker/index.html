@@ -1,222 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Black Rabbit Digital | Media Website</title>
-        <link rel="shortcut icon" href="../images/BRD.ico">
-        <!-- Bootstrap CSS + Font icons -->
-        <link rel="stylesheet" href="../style/bootstrap.min.css">
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="../style/style.css">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">        
-
-    </head>
-    <body>
-        <div>
-            <header>
-                <div class="container-fluid">
-                    <nav>
-                        <img src="../images/BRD.png" alt="logo" class="logo">
-                        <!--hamburger togger-->
-                        <div class="hamburger">
-                            <i class="fas fa-bars"></i>
-                        </div>
-                    <!-- Navigation-->
-                    <ul class="nav-ul">
-                        <div class="fas fa-times close"></div>
-                        <li><a href="../" class="nav-link">Home</a></li>
-                        <li><a href="../about/" class="nav-link">About</a></li>
-                        <li><a href="../portfolio/" class="nav-link">Portfolio</a></li>
-                        <li><a href="index.html" class="nav-link current">PriceChecker</a></li>
-                        <li><a href="../contact/" class="nav-link">Contact</a></li>
-                    </ul>
-                    <i class="fas fa-search search"></i>
-                    </nav>	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Rabbit Digital | Price Checker</title>
+    <link rel="shortcut icon" href="../images/BRD.ico">
+    <link rel="stylesheet" href="../style/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <nav>
+                <img src="../images/BRD.png" alt="Black Rabbit Digital Logo" class="logo">
+                <div class="hamburger" id="hamburger-menu">
+                    <i class="fas fa-bars"></i>
                 </div>
-            </header>
+                <ul class="nav-ul" id="nav-menu">
+                    <i class="fas fa-times close" id="close-menu"></i>
+                    <li class="link"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="link"><a href="../about.html" class="nav-link">About</a></li>
+                    <li class="link"><a href="../portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li class="link"><a href="priceChecker.html" class="nav-link current">Price Checker</a></li>
+                    <li class="link"><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <i class="fas fa-search search" id="search-icon"></i>
+            </nav>
         </div>
-        <main>
-            <!-- Top section -->
-        <section id="intro">
+    </header>
+
+    <main>
+        <section id="price-checker-intro">
             <div class="container">
-                <div class="intro-text line">
-                    <h1>Black Rabbit Digital</h1>
-                    <button class="static-btn">Check the Price</button>
+                <div class="intro-text">
+                    <h1>Website Cost Estimator</h1>
+                    <p>Use our price checker to estimate the cost of your project.</p>
                 </div>
             </div>
         </section>
-        <section>
+
+        <section id="price-checker-form" data-aos="fade-up">
             <div class="container">
-                <div class="heading line row" id = "header-text">
-                    <h2>Find The Price</h2>
-                </div>
-            <div>
-        </section>
-            <!-- Form -->
-        <section id="services-form">
-            <div class="form-container container">
-                <div class = "row">
-                <div class="form-text col-7 button-div">
-                    <form onsubmit="return false">
-                        <div class = "row questions">
-                            <h2 class="form-intro-price">Fill out the details below to get a price for your project. <br><br>We look forward to working with you.</h2>                   
-                            </div>
-                            <div>
-                                <br>
-                                <labeL class="required">Enter your name: </labeL>
-                                <input class = "inputs-dara"  type="text"  id="name-price" required/>
-                                <br>
-                                <br>
-                                <labeL class="required">Enter your email address: </labeL>
-                                <input class = "inputs-dara" type="text"  id="email-price" required/>
-                                <br>
-                                <br>
-                                <labeL>Number of Web Pages: </labeL>
-                                <input class = "inputs-dara" type="number-price" id="num-web-pages"/>
-                                <br>
-                                <br>
-                            </div>
-                            <br>
-                            <div class = "checkbox-container row">
-                                <p><b>Website Requirements</b></p><br><br>
-                                <labeL class = "checkboxes">SEO</labeL><input type="checkbox" id="seo"/>
-                                <labeL class = "checkboxes">Graphic Design</labeL><input type="checkbox" id="graphic-design"/>
-                                <labeL class = "checkboxes">Google Ad Optimisation</labeL><input type="checkbox" id="google-ads"/>
-                                <labeL class = "checkboxes">Social Media Posts For Launch</labeL><input type="checkbox" id="social-media-posts"/>
-                                <labeL class = "checkboxes">Ecommerce Functionality</labeL><input type="checkbox" id="ecommerce"/>
-                                <labeL class = "checkboxes">6 Months Support & Maintenance</labeL><input type="checkbox" id="support"/>
-                            </div>
-                            <br>
-                            <br>
-                            <div class = "button-div">
-                                <button class = "static-btn col" onclick="servicesCalculate()">Submit</button>
-                                <button class = "static-btn col" onclick="sendEmail()">Send Email</button>
-                            </div>
-                            <br>
-                            <br>
-                    </form>
+                <form id="price-form">
+                    <label for="name-price" class="required">Enter your name:</label>
+                    <input type="text" id="name-price" class="inputs-dara" required>
                     
-                </div>
-
-                <div class = "col" >
-                    <div class = "card card-dara shadow">
-                    <h2>
-                        Find out how much your website will cost with our Price checker!
-                    </h2>
-                    <br>
-                    <p><b>Your Website will cost:</b></p>
-                    <p id = "message">?</p>
+                    <label for="email-price" class="required">Enter your email address:</label>
+                    <input type="email" id="email-price" class="inputs-dara" required>
                     
-                </div>
-                <img src = "../images/Coding-image-long.jpg" alt = "Coding Image" id = "coding-image">
-            </div>
-            
-            </div>   
-                </div>
-            </div>
-        </section>
-            <div class = "container-fluid black-background">
-                <div class = "row">
-                    <div class = "col">
-                    <h2 class = "services-header" >Our Services</h2>
-                </div>
-            </div>
-                <div class = "row">
-                    <div class = "col">
-                        <div class="card card-dara w-75" data-aos="fade-in">
-                            <div class="card-body">
-                                
-                              <h2 class="card-title">Web Design</h2>
-                              <p class="card-text">We design quality SEO driven websites for your needs.</p>
-                              <a href="#" class="btn btn-primary">Learn More</a>
-                            </div>
-                          </div>
-                          
-
+                    <label for="num-web-pages">Number of Web Pages:</label>
+                    <input type="number" id="num-web-pages" class="inputs-dara">
+                    
+                    <label><b>Website Requirements</b></label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="seo"> SEO Optimization</label>
+                        <label><input type="checkbox" id="graphic-design"> Graphic Design</label>
+                        <label><input type="checkbox" id="google-ads"> Google Ad Optimization</label>
+                        <label><input type="checkbox" id="social-media-posts"> Social Media Posts</label>
+                        <label><input type="checkbox" id="ecommerce"> E-Commerce Functionality</label>
+                        <label><input type="checkbox" id="support"> 6-Months Maintenance</label>
                     </div>
-                        <div class = "col">
-                            <div class="card card-dara w-75 card-margin" data-aos="fade-in">
-                                <div class="card-body">
-                                <h2 class="card-title">Branding</h2>
-                                <p class="card-text">We will design a logo and branding documents for your company.</p>
-                                <a href="#" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-
-                </div>
-                    <div class = "row">
-                        <div class = "col">
-                            <div class="card card-dara w-75" data-aos="fade-in" >
-                                <div class="card-body">
-                                <h2 class="card-title">Graphic Design</h2>
-                                <p class="card-text">Print and Digital Media for your business needs.</p>
-                                <a href="#" class="btn btn-primary">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                <div class = "col">
-                    <div class="card card-dara w-75 card-margin" data-aos="fade-in" >
-                        <div class="card-body">
-                          <h2 class="card-title">Advertisement</h2>
-                          <p class="card-text">We will optimise your social media and online presence.</p>
-                          <a href="#" class="btn btn-primary">Learn More</a>
-                        </div>
-                      </div>
-                </div>
-            </div>
-            </div>
-
-           <!-- Homepage contact section-->
-           <section id="contact">
-            <div class="container">
-                <div class="contact">
-                    <!-- Icons -->
-                    <div class="contact-icon">
-                        <i class="fab fa-facebook"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-instagram"></i>
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                     <!-- mini contact form -->
-                    <div>
-                     <h2>Get in Touch</h2>
-                    </div>
-                    <form method="POST">
-                    <div>
-                        <input type="text" placeholder="Name" id="name" required/>
-                    </div>
-                    <div>
-                        <input type="email" placeholder="Email" id="email" required/>
-                    </div>
-                     <!-- button to submit for mini contact form-->
-                    <button type="submit" class="btn">
-                    </form>        
-            </div>
-        </section>
-        </main>
-        <footer>
-            <div class="container">
-                <p>2021 &copy; BlackRabbitDigital. All rights reserved.</p>
-            </div>
-        </footer>
-        <div class="search-modal" id="modal">
-            <span class="close-modal">&times;</span>
-            <div class="modal-content">
-                <form action="">
-                    <input type="text" placeholder="Search"/>
-                    <i class="fas fa-search search"></i>
+                    
+                    <button type="submit" class="btn btn-dark">Calculate Price</button>
                 </form>
+                <div id="message"></div>
             </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Black Rabbit Digital. All rights reserved.</p>
         </div>
-        <!--Javascript-->
-        
-        <script src = "../js/PriceCheckerScript.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
-        <script>
-            AOS.init();
-        </script>
-    </body>   
+    </footer>
+
+    <div class="search-modal" id="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <form>
+                <input type="text" placeholder="Search">
+                <i class="fas fa-search search"></i>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/PriceCheckerScript.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
 </html>

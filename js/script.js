@@ -1,120 +1,83 @@
-// New Toggler //
-const hamburger = document.querySelector(".hamburger");
-const close = document.querySelector(".close");
-const navUL = document.querySelector(".nav-ul");
-
-hamburger.addEventListener("click", () => {
-    navUL.classList.toggle("show");
-    hamburger.classList.toggle("hide");
-});
-
-close.addEventListener("click", () => {
-    navUL.classList.toggle("show");
-    hamburger.classList.toggle("hide");
-});
-
-// Countdown timer//
-const countTo = "31 May 2023";
-
-const c = setInterval(() => {
-    const endDate = new Date(countTo);
-    const currentDate = new Date();
-    const totalSeconds = (endDate - currentDate) / 1000;
-
-    const days = Math.floor(totalSeconds / 3600 / 24);  
-    const hours = Math.floor(totalSeconds / 3600) % 24;  
-    const mins = Math.floor(totalSeconds / 3600 / 60) % 60;  
-    const secs = Math.floor(totalSeconds) % 60;  
-
-    const countDown = document.getElementById("countdown");
-
-    countDown.textContent = +days+'Days ' +format(hours)+'Hrs :' +format(mins)+'Min :' +format(secs)+'s';
-
-    if(totalSeconds < 0) {
-        clearInterval(c);
-        countDown.textContent = "We're Live";
-    }
-
-}, 1000)
-
-function format(t){
-    return t < 10 ? '0'+t :+  t;
-}
-
-// Carousel //
-let thumbnails = document.getElementsByClassName("thumbnail");
-let carousels = document.getElementById("carousel");
-let buttonRight = document.getElementById("slide-right");
-let buttonLeft = document.getElementById("slide-left");
-
-
-buttonLeft.addEventListener("click", () => {
-    carousels.scrollLeft -= 125;
-});
-
-buttonRight.addEventListener("click", () => {
-    carousels.scrollLeft += 125;
-});
-
-const maxScrollLeft = carousels.scrollWidth - carousels.clientWidth;
-//alert(maxScrollLeft);
-
-//AutoPlay carousel
-function autoPlay() {
-    if(carousels.scrollLeft > (maxScrollLeft - 1)){
-        carousels.scrollLeft -= maxScrollLeft;
-    }
-    else{
-        carousels.scrollLeft += 1;
-    }
-}
-
-let play = setInterval(autoPlay, 50);
-
-//Pause carousel while hovering
-for (let i = 0; i < thumbnails.length; i++){
-    thumbnails[i].addEventListener("mouseover", () => {
-        clearInterval(play)
-    })
-    thumbnails[i].addEventListener("mouseout", () => {
-        return play = setInterval(autoPlay, 50);
-    })
-}
-
-// Search Modal //
-const btn = document.querySelector(".search");
-const closeModal = document.querySelector(".close-modal");
-
-btn.addEventListener("click", openPopup);
-closeModal.addEventListener("click", closePopup);
-
-function openPopup(e) {
-    e.preventDefault();
-    modal.style.display = "block";
-}
-
-function closePopup() {
-    modal.style.display = "none";
-}
-
-//submission message //
-
-function formSubmission(){
-    var name = document.getElementById("name").value
-    var email = document.getElementById("email").value
+// Main JavaScript for Black Rabbit Digital Website
+document.addEventListener("DOMContentLoaded", function() {
+    AOS.init(); // Initialize animations
     
-    window.alert("Thank you "+name+" for your enquiry. We will be in contact with you shortly via the given email address, " +email);
-   }
-   
-   
-   document.addEventListener('submit', event => {
-       event.preventDefault()
-       formSubmission()
-   }) 
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById("hamburger-menu");
+    const navMenu = document.getElementById("nav-menu");
+    const closeMenu = document.getElementById("close-menu");
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    }
+    if (closeMenu) {
+        closeMenu.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+        });
+    }
 
-// Page animation//
-AOS.init({
-    duration: 1000,
-})
+    // Search Modal Functionality
+    const searchIcon = document.getElementById("search-icon");
+    const searchModal = document.getElementById("modal");
+    const closeModal = document.querySelector(".close-modal");
+    
+    if (searchIcon && searchModal) {
+        searchIcon.addEventListener("click", () => {
+            searchModal.style.display = "block";
+        });
+    }
+    if (closeModal) {
+        closeModal.addEventListener("click", () => {
+            searchModal.style.display = "none";
+        });
+    }
 
+    // Portfolio Image Click Preview
+    const portfolioItems = document.querySelectorAll(".portfolio-item img");
+    
+    portfolioItems.forEach(item => {
+        item.addEventListener("click", () => {
+            const previewModal = document.getElementById("preview-modal");
+            const previewImage = document.getElementById("preview-image");
+            
+            if (previewModal && previewImage) {
+                previewImage.src = item.src;
+                previewModal.style.display = "block";
+            }
+        });
+    });
+    
+    // Close Portfolio Image Preview
+    const closePreview = document.getElementById("close-preview");
+    if (closePreview) {
+        closePreview.addEventListener("click", () => {
+            document.getElementById("preview-modal").style.display = "none";
+        });
+    }
 
+    // Contact Form Handling
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("form-response").innerHTML = "<p>Thank you for reaching out! We'll get back to you soon.</p>";
+            contactForm.reset();
+        });
+    }
+
+    // Carousel Functionality
+    const slideLeft = document.getElementById("slide-left");
+    const slideRight = document.getElementById("slide-right");
+    const carousel = document.getElementById("carousel");
+    
+    if (slideLeft && slideRight && carousel) {
+        slideLeft.addEventListener("click", () => {
+            carousel.scrollBy({ left: -300, behavior: "smooth" });
+        });
+        slideRight.addEventListener("click", () => {
+            carousel.scrollBy({ left: 300, behavior: "smooth" });
+        });
+    }
+});

@@ -1,61 +1,45 @@
-
-
-//jQuery functionality on click "Click to meet the team"
-$(document).ready(function(){
-    $("button.about-click").click(function(){
-      $("#div1").css("display", "flex")
-      .hide().fadeIn(3000);
-      $("#div2").css("display", "flex")
-      .hide().fadeIn(6000);
-      $("#div3").css("display", "flex")
-      .hide().fadeIn(9000);
+// JavaScript for About Page functionality
+document.addEventListener("DOMContentLoaded", function() {
+    // Team Member Details Toggle
+    const teamMembers = document.querySelectorAll(".team-member");
+    
+    teamMembers.forEach(member => {
+        member.addEventListener("click", () => {
+            member.classList.toggle("active");
+            const details = member.querySelector(".team-details");
+            if (details) {
+                details.classList.toggle("visible");
+            }
+        });
     });
-  });
 
+    // Smooth Scroll for About Section Links
+    const aboutLinks = document.querySelectorAll(".nav-link");
+    aboutLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            if (this.getAttribute("href").startsWith("#")) {
+                event.preventDefault();
+                const targetId = this.getAttribute("href").substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
 
-//On click form submission button 
-function formSubmission(){
- var name = document.getElementById("name").value
- var email = document.getElementById("email").value
- 
- window.alert("Thank you "+name+" for your enquiry. We will be in contact with you shortly via the given email address, " +email);
-}
-
-
-document.addEventListener('submit', event => {
-    event.preventDefault()
-    formSubmission()
-})
-
-// New Toggler //
-const hamburger = document.querySelector(".hamburger");
-const close = document.querySelector(".close");
-const navUL = document.querySelector(".nav-ul");
-
-hamburger.addEventListener("click", () => {
-    navUL.classList.toggle("show");
-    hamburger.classList.toggle("hide");
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById("hamburger-menu");
+    const navMenu = document.getElementById("nav-menu");
+    const closeMenu = document.getElementById("close-menu");
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    }
+    if (closeMenu) {
+        closeMenu.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+        });
+    }
 });
-
-close.addEventListener("click", () => {
-    navUL.classList.toggle("show");
-    hamburger.classList.toggle("hide");
-});
-
-// Search Modal //
-const btn = document.querySelector(".search");
-const closeModal = document.querySelector(".close-modal");
-
-btn.addEventListener("click", openPopup);
-closeModal.addEventListener("click", closePopup);
-
-function openPopup(e) {
-    e.preventDefault();
-    modal.style.display = "block";
-}
-
-function closePopup() {
-    modal.style.display = "none";
-}
-
-
