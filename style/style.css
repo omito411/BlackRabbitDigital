@@ -169,7 +169,7 @@ nav .logo{
     margin-bottom: 5rem;
 }
 
-.btn{
+.btn {
     display: inline-block;
     padding: 1.5rem 3rem;
     font-size: 2rem;
@@ -177,18 +177,18 @@ nav .logo{
     color: var(--white);
     border: 2px solid var(--pink);
     cursor: pointer;
-    position:relative;
+    position: relative;
     background-color: transparent;
     text-decoration: none;
     overflow: hidden;
     z-index: 1;
 }
 
-.btn::before{
+.btn::before {
     content: "";
     position: absolute;
     left: 0;
-    top:0;
+    top: 0;
     width: 99.5%;
     height: 100%;
     background-color: var(--pink);
@@ -197,8 +197,10 @@ nav .logo{
     z-index: -1;
 }
 
-.btn:hover::before{
+.btn:hover {
+    background-color: var(--color-sec);
     transform: translateX(0);
+    transition: 0.3s ease-in-out;
 }
 
 /* intro boxes */
@@ -554,7 +556,7 @@ footer{
 
 /* Search Modal */
 
-.search-modal{
+.search-modal {
     display: none;
     position: fixed;
     left: 0;
@@ -562,7 +564,7 @@ footer{
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,.9);
+    background-color: rgba(0, 0, 0, .9);
     z-index: 1;
 }
 
@@ -574,7 +576,6 @@ footer{
     text-align: center;
     animation: slide ease 0.8s;
     background-color: transparent;
-
 }
 
 @keyframes slide {
@@ -849,10 +850,10 @@ form i{
     opacity: 0;
     position: absolute;
 }
-.portfolio-image:hover:before{
-    opacity: 1;
-    transition: .3s;
+.portfolio-image:hover::before {
+    opacity: 0.8;
 }
+
 /*
 #footers{
     display: flex;
@@ -1028,6 +1029,68 @@ form label {
     font-size: large;
 }
 
+/* General Form Styles */
+input, select, textarea {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    border: 2px solid var(--pink);
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Container */
+#project-request {
+    background-color: var(--color-grey);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+#project-request .container {
+    max-width: 700px;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Fields */
+#project-form input,
+#project-form select,
+#project-form textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: 2px solid var(--pink);
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+#project-form .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: var(--pink);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#project-form .btn:hover {
+    background: var(--color-sec);
+}
+
+/* Confirmation Message */
+#confirmation-message {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-top: 2rem;
+}
+
 /* PriceChecker page */
 /* PriceChecker page */
 /* PriceChecker page */
@@ -1124,14 +1187,18 @@ form label {
     .current::before{
         display: none;
     }
-    .search{
-        display: none;
+    .search {
+        visibility: visible;
     }
     .hamburger{
         display: block;
     }
     .nav-ul .close{
         display: block;
+    }
+    .nav-ul.show {
+        flex-direction: column;
+        text-align: center;
     }
     .show{
         display: flex;
@@ -1179,10 +1246,9 @@ form label {
 }
 
 @media (max-width: 380px) {
-    .about-img{
-          height: 130px;
-          width: 130px;
-          margin:auto;
+    .about-img {
+        max-width: 100%;
+        height: auto;
     }
 } 
 

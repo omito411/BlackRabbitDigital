@@ -3,75 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Rabbit Digital | Form Page</title>
-    <link rel="shortcut icon" href="../images/BRD.ico">
-    <link rel="stylesheet" href="../style/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="../style/style.css">
+    <title>Project Request Form</title>
+    <link rel="stylesheet" href="../style/style.css"> <!-- Ensure styling -->
 </head>
 <body>
     <header>
         <div class="container-fluid">
             <nav>
-                <img src="../images/BRD.png" alt="Black Rabbit Digital Logo" class="logo">
-                <div class="hamburger" id="hamburger-menu">
+                <img src="../images/BRD.png" alt="logo" class="logo">
+                <div class="hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
-                <ul class="nav-ul" id="nav-menu">
-                    <i class="fas fa-times close" id="close-menu"></i>
-                    <li class="link"><a href="../index.html" class="nav-link">Home</a></li>
-                    <li class="link"><a href="../about.html" class="nav-link">About</a></li>
-                    <li class="link"><a href="../portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li class="link"><a href="../priceChecker.html" class="nav-link">Price Checker</a></li>
-                    <li class="link"><a href="../contact.html" class="nav-link">Contact</a></li>
+                <ul class="nav-ul">
+                    <i class="fas fa-times close"></i>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../about/index.html" class="nav-link">About</a></li>
+                    <li><a href="../portfolio/index.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="../priceChecker/index.html" class="nav-link">Price Checker</a></li>
+                    <li><a href="index.html" class="nav-link current">Request a Project</a></li>
                 </ul>
-                <i class="fas fa-search search" id="search-icon"></i>
+                <i class="fas fa-search search"></i>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="form-intro">
+        <section id="project-request">
             <div class="container">
-                <div class="intro-text">
-                    <h1>Fill Out the Form</h1>
-                    <p>Complete the form below to get started with your project.</p>
-                </div>
-            </div>
-        </section>
+                <h1>Request a Project</h1>
+                <p>Please fill out the form below to tell us what project you need.</p>
 
-        <section id="form-section" data-aos="fade-up">
-            <div class="container">
-                <form id="custom-form">
-                    <label for="full-name">Full Name:</label>
-                    <input type="text" id="full-name" required>
+                <form id="project-form" onsubmit="return false;">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+
+                    <label for="email">Your Email:</label>  <!-- ✅ Fix: Added email input -->
+                    <input type="email" id="email" placeholder="Enter your email" required>
                     
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" required>
-                    
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" required>
-                    
-                    <label for="project-details">Project Details:</label>
-                    <textarea id="project-details" rows="5" required></textarea>
-                    
-                    <button type="submit" class="btn btn-dark">Submit</button>
+                    <label for="project-type">Select Project Type:</label>
+                    <select id="project-type" required>
+                        <option value="">-- Select a Project Type --</option>
+                        <option value="web-design">Web Design</option>
+                        <option value="branding">Branding</option>
+                        <option value="seo">SEO Optimization</option>
+                        <option value="graphic-design">Graphic Design</option>
+                        <option value="advertising">Online Advertising</option>
+                    </select>
+
+                    <button type="submit" onclick="submitProjectForm()" class="btn">Submit</button>
                 </form>
-                <div id="form-response"></div>
+
+                <p id="confirmation-message" style="display:none;"></p> <!-- ✅ Fix: Confirmation message updates here -->
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Black Rabbit Digital. All rights reserved.</p>
+            <p>&copy; 2025 AkPabor Digital. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="../js/form-script.js"></script>
-    <script>AOS.init();</script>
+    <script defer src="../js/script.js"></script> <!-- Ensure correct script path -->
 </body>
 </html>

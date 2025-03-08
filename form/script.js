@@ -1,34 +1,52 @@
-// JavaScript for Form Page functionality
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("custom-form");
-    const responseMessage = document.getElementById("form-response");
-    
-    if (form) {
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById("full-name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const phone = document.getElementById("phone").value.trim();
-            const details = document.getElementById("project-details").value.trim();
-            
-            if (name === "" || email === "" || phone === "" || details === "") {
-                responseMessage.innerHTML = "<p style='color: red;'>All fields are required.</p>";
-                return;
-            }
-            
-            if (!validateEmail(email)) {
-                responseMessage.innerHTML = "<p style='color: red;'>Please enter a valid email address.</p>";
-                return;
-            }
-            
-            responseMessage.innerHTML = "<p style='color: green;'>Thank you! Your submission has been received.</p>";
-            form.reset();
-        });
+function submitProjectForm() {
+    const nameInput = document.getElementById("name").value.trim();
+    const emailInput = document.getElementById("email").value.trim();
+    const projectType = document.getElementById("project-type").value;
+
+    if (nameInput === "" || emailInput === "" || projectType === "") {
+        alert("Please fill out all required fields.");
+        return;
     }
-    
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
+
+    // ✅ Fix: Reset form fields after submission
+    document.getElementById("project-form").reset();
+
+    const confirmationMessage = document.getElementById("confirmation-message");
+    confirmationMessage.innerHTML = `Thank you, <strong>${nameInput}</strong>. 
+    We have received your request for <strong>${projectType.replace("-", " ")}</strong>. 
+    Our team will contact you soon at <strong>${emailInput}</strong>.`;
+    confirmationMessage.style.display = "block";
+}
+
+// Navigation Toggle
+const hamburger = document.querySelector(".hamburger");
+const close = document.querySelector(".close");
+const navUL = document.querySelector(".nav-ul");
+
+hamburger.addEventListener("click", () => {
+    navUL.classList.toggle("show");
+    hamburger.classList.toggle("hide");
 });
+
+close.addEventListener("click", () => {
+    navUL.classList.toggle("show");
+    hamburger.classList.toggle("hide");
+});
+
+// 🔧 Fix: Define Search Modal
+const modal = document.getElementById("modal");
+
+const btn = document.querySelector(".search");
+const closeModal = document.querySelector(".close-modal");
+
+btn.addEventListener("click", openPopup);
+closeModal.addEventListener("click", closePopup);
+
+function openPopup(e) {
+    e.preventDefault();
+    modal.style.display = "block";
+}
+
+function closePopup() {
+    modal.style.display = "none";
+}

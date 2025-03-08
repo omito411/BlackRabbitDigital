@@ -1,56 +1,71 @@
-// JavaScript for Price Checker, Search Modal, Contact Form, and New Toggle functionality
-document.addEventListener("DOMContentLoaded", function() {
-    // Price Checker Functionality
-    const priceForm = document.getElementById("price-form");
-    if (priceForm) {
-        priceForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            let totalPrice = 100;
-            const numPages = document.getElementById("num-web-pages").value || 0;
-            const seo = document.getElementById("seo").checked ? 50 : 0;
-            const design = document.getElementById("graphic-design").checked ? 75 : 0;
-            const ads = document.getElementById("google-ads").checked ? 40 : 0;
-            const socialMedia = document.getElementById("social-media-posts").checked ? 30 : 0;
-            const ecommerce = document.getElementById("ecommerce").checked ? 150 : 0;
-            const maintenance = document.getElementById("support").checked ? 100 : 0;
-            
-            totalPrice += (numPages * 30) + seo + design + ads + socialMedia + ecommerce + maintenance;
-            document.getElementById("message").innerHTML = `<h3>Estimated Cost: $${totalPrice}</h3>`;
-        });
-    }
+let price = 0;
 
-    // Search Modal Functionality
-    const searchIcon = document.getElementById("search-icon");
-    const searchModal = document.getElementById("modal");
-    const closeModal = document.querySelector(".close-modal");
-    
-    if (searchIcon && searchModal) {
-        searchIcon.addEventListener("click", () => {
-            searchModal.style.display = "block";
-        });
-    }
-    if (closeModal) {
-        closeModal.addEventListener("click", () => {
-            searchModal.style.display = "none";
-        });
-    }
+function servicesCalculate() {
+    const numWebPages = parseInt(document.getElementById('num-web-pages').value) || 0;
+    const seo = document.getElementById('seo').checked;
+    const graphicDesign = document.getElementById('graphic-design').checked;
+    const googleAds = document.getElementById('google-ads').checked;
+    const socialMediaPosts = document.getElementById('social-media-posts').checked;
+    const ecommerce = document.getElementById('ecommerce').checked;
+    const support = document.getElementById('support').checked;
 
-    // Contact Form Handling
-    const contactForm = document.getElementById("contact-form");
-    if (contactForm) {
-        contactForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            document.getElementById("form-response").innerHTML = "<p>Thank you for reaching out! We'll get back to you soon.</p>";
-            contactForm.reset();
-        });
-    }
+    price = numWebPages * 20;
+    if (seo) price += numWebPages * 5;
+    if (graphicDesign) price += numWebPages * 5;
+    if (googleAds) price += numWebPages * 10;
+    if (socialMediaPosts) price += numWebPages * 2;
+    if (ecommerce) price += numWebPages * 15;
+    if (support) price += numWebPages * 10;
 
-    // New Toggle Functionality
-    const toggleButton = document.getElementById("toggle-button");
-    const toggleContent = document.getElementById("toggle-content");
-    if (toggleButton && toggleContent) {
-        toggleButton.addEventListener("click", () => {
-            toggleContent.classList.toggle("active");
-        });
-    }
+    document.getElementById("message").innerHTML = "Your Website will cost €" + price;
+}
+
+function sendEmail() {
+    window.open('mailto:sales@blackrabbitdigital.ie?subject=Online Quote&body=I have received a quote on your website for €' + price);
+}
+
+// Navigation Toggle
+const hamburger = document.querySelector(".hamburger");
+const close = document.querySelector(".close");
+const navUL = document.querySelector(".nav-ul");
+
+hamburger.addEventListener("click", () => {
+    navUL.classList.toggle("show");
+    hamburger.classList.toggle("hide");
+});
+
+close.addEventListener("click", () => {
+    navUL.classList.toggle("show");
+    hamburger.classList.toggle("hide");
+});
+
+// 🔧 Fix: Define Search Modal
+const modal = document.getElementById("modal");
+
+const btn = document.querySelector(".search");
+const closeModal = document.querySelector(".close-modal");
+
+btn.addEventListener("click", openPopup);
+closeModal.addEventListener("click", closePopup);
+
+function openPopup(e) {
+    e.preventDefault();
+    modal.style.display = "block";
+}
+
+function closePopup() {
+    modal.style.display = "none";
+}
+
+// Form Submission
+function formSubmission() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+
+    window.alert("Thank you " + name + " for your enquiry. We will be in contact with you shortly via the given email address, " + email);
+}
+
+document.addEventListener('submit', event => {
+    event.preventDefault();
+    formSubmission();
 });

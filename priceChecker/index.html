@@ -1,96 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Rabbit Digital | Price Checker</title>
-    <link rel="shortcut icon" href="../images/BRD.ico">
-    <link rel="stylesheet" href="../style/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="../style/style.css">
-</head>
-<body>
-    <header>
-        <div class="container-fluid">
-            <nav>
-                <img src="../images/BRD.png" alt="Black Rabbit Digital Logo" class="logo">
-                <div class="hamburger" id="hamburger-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-ul" id="nav-menu">
-                    <i class="fas fa-times close" id="close-menu"></i>
-                    <li class="link"><a href="../index.html" class="nav-link">Home</a></li>
-                    <li class="link"><a href="../about.html" class="nav-link">About</a></li>
-                    <li class="link"><a href="../portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li class="link"><a href="priceChecker.html" class="nav-link current">Price Checker</a></li>
-                    <li class="link"><a href="../contact.html" class="nav-link">Contact</a></li>
-                </ul>
-                <i class="fas fa-search search" id="search-icon"></i>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section id="price-checker-intro">
-            <div class="container">
-                <div class="intro-text">
-                    <h1>Website Cost Estimator</h1>
-                    <p>Use our price checker to estimate the cost of your project.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="price-checker-form" data-aos="fade-up">
-            <div class="container">
-                <form id="price-form">
-                    <label for="name-price" class="required">Enter your name:</label>
-                    <input type="text" id="name-price" class="inputs-dara" required>
-                    
-                    <label for="email-price" class="required">Enter your email address:</label>
-                    <input type="email" id="email-price" class="inputs-dara" required>
-                    
-                    <label for="num-web-pages">Number of Web Pages:</label>
-                    <input type="number" id="num-web-pages" class="inputs-dara">
-                    
-                    <label><b>Website Requirements</b></label>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" id="seo"> SEO Optimization</label>
-                        <label><input type="checkbox" id="graphic-design"> Graphic Design</label>
-                        <label><input type="checkbox" id="google-ads"> Google Ad Optimization</label>
-                        <label><input type="checkbox" id="social-media-posts"> Social Media Posts</label>
-                        <label><input type="checkbox" id="ecommerce"> E-Commerce Functionality</label>
-                        <label><input type="checkbox" id="support"> 6-Months Maintenance</label>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AkPabor Digital | Price Checker</title>
+        <link rel="shortcut icon" href="../images/BRD.ico">
+        <link rel="stylesheet" href="../style/bootstrap.min.css">
+        <link rel="stylesheet" href="../style/style.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">        
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <nav>
+                    <img src="../images/BRD.png" alt="logo" class="logo">
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
                     </div>
-                    
-                    <button type="submit" class="btn btn-dark">Calculate Price</button>
-                </form>
-                <div id="message"></div>
+                    <ul class="nav-ul">
+                        <div class="fas fa-times close"></div>
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../about/index.html" class="nav-link">About</a></li>
+                        <li><a href="../portfolio/index.html" class="nav-link">Portfolio</a></li>
+                        <li><a href="index.html" class="nav-link current">Price Checker</a></li>
+                        <li><a href="../contact/index.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    <i class="fas fa-search search"></i>
+                </nav>	
             </div>
-        </section>
-    </main>
+        </header>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Black Rabbit Digital. All rights reserved.</p>
+        <main>
+            <section id="intro">
+                <div class="container">
+                    <div class="intro-text">
+                        <h1>Black Rabbit Digital</h1>
+                        <button class="static-btn">Check the Price</button>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2>Find The Price</h2>
+                </div>
+            </section>
+
+            <!-- Form -->
+            <section id="services-form">
+                <div class="form-container container">
+                    <form onsubmit="return false">
+                        <h2 class="form-intro-price">Fill out the details below to get a price for your project.</h2>
+                        <label class="required">Enter your name:</label>
+                        <input type="text" id="name-price" required/>
+                        
+                        <label class="required">Enter your email address:</label>
+                        <input type="email" id="email-price" required/>
+
+                        <label>Number of Web Pages:</label>
+                        <input type="number" id="num-web-pages"/>
+
+                        <p><b>Website Requirements</b></p>
+                        <label>SEO</label><input type="checkbox" id="seo"/>
+                        <label>Graphic Design</label><input type="checkbox" id="graphic-design"/>
+                        <label>Google Ad Optimization</label><input type="checkbox" id="google-ads"/>
+                        <label>Social Media Posts</label><input type="checkbox" id="social-media-posts"/>
+                        <label>Ecommerce Functionality</label><input type="checkbox" id="ecommerce"/>
+                        <label>6 Months Support & Maintenance</label><input type="checkbox" id="support"/>
+
+                        <button class="static-btn" onclick="servicesCalculate()">Submit</button>
+                        <button class="static-btn" onclick="sendEmail()">Send Email</button>
+                    </form>
+
+                    <div class="price-display">
+                        <h2>Your Website will cost:</h2>
+                        <p id="message">?</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 AkPabor Digital. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Search Modal -->
+        <div class="search-modal" id="modal">
+            <span class="close-modal">&times;</span>
+            <div class="modal-content">
+                <form action="">
+                    <input type="text" placeholder="Search"/>
+                    <i class="fas fa-search search"></i>
+                </form>
+            </div>
         </div>
-    </footer>
 
-    <div class="search-modal" id="modal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content">
-            <form>
-                <input type="text" placeholder="Search">
-                <i class="fas fa-search search"></i>
-            </form>
-        </div>
-    </div>
-
-    <script src="../js/PriceCheckerScript.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
-    <script>
-        AOS.init();
-    </script>
-</body>
+        <!-- JavaScript -->
+        <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="../js/PriceCheckerScript.js"></script>
+        <script>AOS.init();</script>
+    </body>   
 </html>
