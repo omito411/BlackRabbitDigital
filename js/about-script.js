@@ -8,13 +8,29 @@ $(document).ready(function(){
     });
 });
 
-// Form Submission Handling
-function formSubmission() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    
-    window.alert("Thank you " + name + " for your enquiry. We will be in contact with you shortly via the given email address, " + email);
+// Hamburger Menu Toggle
+const hamburger = document.querySelector(".hamburger");
+const close = document.querySelector(".close");
+const navUL = document.querySelector(".nav-ul");
+
+if (hamburger && close && navUL) {
+    hamburger.addEventListener("click", () => {
+
+        console.log("Hamburger clicked");
+        navUL.classList.toggle("show");
+        hamburger.classList.toggle("hide");
+    });
+
+    close.addEventListener("click", () => {
+        console.log("Close clicked");
+        navUL.classList.toggle("show");
+        hamburger.classList.toggle("hide");
+    });
+
+} else {
+    console.error("Hamburger, close, or nav-ul not found")
 }
+
 
 // Prevent form reload on submit
 document.addEventListener('submit', event => {
@@ -22,35 +38,36 @@ document.addEventListener('submit', event => {
     formSubmission();
 });
 
-// Navigation Toggle
-const hamburger = document.querySelector(".hamburger");
-const close = document.querySelector(".close");
-const navUL = document.querySelector(".nav-ul");
-
-hamburger.addEventListener("click", () => {
-    navUL.classList.toggle("show");
-    hamburger.classList.toggle("hide");
-});
-
-close.addEventListener("click", () => {
-    navUL.classList.toggle("show");
-    hamburger.classList.toggle("hide");
-});
-
 // 🔧 Fix: Define Search Modal
-const modal = document.getElementById("modal"); // ✅ Fix added
+const modal = document.getElementById("search-modal"); // ✅ Fix added
 
 const btn = document.querySelector(".search");
 const closeModal = document.querySelector(".close-modal");
 
-btn.addEventListener("click", openPopup);
-closeModal.addEventListener("click", closePopup);
+if (btn && modal && closeModal) {
+    btn.addEventListener("click", openPopup);
+    closeModal.addEventListener("click", closePopup);
 
-function openPopup(e) {
-    e.preventDefault();
-    modal.style.display = "block";
+    function openPopup(e) {
+        e.preventDefault();
+        modal.style.display = "block";
+    }
+
+    function closePopup() {
+        modal.style.display = "none";
+    }
+} else {
+    console.error("Search-modal, button, or, close button not found");
 }
 
-function closePopup() {
-    modal.style.display = "none";
+// Form Submission Handling
+const searchForm = 
+document.getElementById("search-form");
+if (searchForm){
+    searchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const query = document.getElementById("search-input").value;
+        alert("searching for: " + query); // replace with actual search logic
+        closePopup();
+    })
 }
