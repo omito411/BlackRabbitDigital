@@ -115,15 +115,20 @@ nav .logo{
 .hamburger{
     display: none;
 }
-
+.hamburger.hide{
+    display: none;
+}
 .search{
     font-size: 2rem;
 }
 
 .close{
     position: absolute;
-    top: 0;
+    top: 1.5rem;
     right: 0;
+    font-size: 2.5rem;
+    color: var(--white);
+    cursor: pointer;
     padding: 1.5rem 3rem 0 0;
     display: none;
 }
@@ -1172,6 +1177,14 @@ input, select, textarea {
         flex-direction: column;
         display: none;
         margin-top: 1rem;
+        background: var(--black);
+
+        position: absolute;
+        top: 60px;
+
+        left:0;
+        padding: 1rem 0;
+        z-index: 1000;
     }
     .nav-ul li{
         width:100%;
@@ -1197,8 +1210,11 @@ input, select, textarea {
         display: block;
     }
     .nav-ul.show {
-        flex-direction: column;
-        text-align: center;
+        display: flex;
+    }
+
+    .nav-ul.show .close {
+        display: block;
     }
     .show{
         display: flex;
