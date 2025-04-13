@@ -35,6 +35,10 @@ p {
     line-height: 1.5;
 }
 
+img {
+    width: 100%;
+}
+
 section {
     width: 100%;
     padding: 8rem 0;
@@ -45,6 +49,102 @@ section {
     max-width: 110rem;
     margin: 0 auto;
     padding: 0 2rem;
+}
+
+/* Header Section */
+header {
+    width: 100%;
+    background-color: var(--black);
+    padding: 5px 0;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem;
+}
+
+nav .logo {
+    width: 15rem;
+}
+
+.nav-ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-ul li a {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 0;
+    margin-left: 3rem;
+    color: var(--white);
+}
+
+.nav-link,
+.current {
+    position: relative;
+}
+
+.nav-link::before,
+.current::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -3px;
+    width: 50%;
+    height: 2px;
+    background-color: var(--pink);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s;
+}
+
+.current::before {
+    transform: scaleX(1);
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+}
+
+.hamburger,
+.close,
+.search {
+    font-size: 2.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger.hide {
+    display: none;
+}
+
+.search {
+    font-size: 2rem;
+}
+
+.close {
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    font-size: 2.5rem;
+    color: var(--white);
+    cursor: pointer;
+    padding: 1.5rem 3rem 0 0;
+    display: none;
 }
 
 /* Contact Hero Section */
@@ -59,24 +159,25 @@ section {
     background: url('../images/background-small.jpeg') no-repeat;
     background-position-x: 70%;
     background-size: 100%;
-    padding: 8rem 0; /* Match #intro .container */
+    padding: 8rem 0;
 }
 
 #contact-hero .intro-text {
-    width: 80%; /* Match #intro .intro-text */
+    width: 80%;
     margin: 0 auto;
     text-align: center;
 }
 
 #contact-hero h1 {
-    font-size: 8rem; /* Match #intro h1 */
+    font-size: 8rem;
     font-weight: 700;
     line-height: 1;
     margin-bottom: 5rem;
+    color: var(--white);
 }
 
 #contact-hero p {
-    font-size: 2rem; /* Match #intro p */
+    font-size: 2rem;
     color: var(--color-grey);
 }
 
@@ -90,14 +191,14 @@ section {
 }
 
 #contact-form {
-    font-size: x-large; /* Match style.css #contact-form */
+    font-size: x-large;
     padding: 35px;
     margin-top: 0;
     margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    max-width: 700px; /* Match #project-request .container */
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -108,7 +209,7 @@ section {
 }
 
 .form-group label {
-    width: 50%; /* Match style.css form label */
+    width: 50%;
     font-size: large;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -116,14 +217,14 @@ section {
 }
 
 .form-group .required:after {
-    content: " *"; /* Match style.css .required */
+    content: " *";
     color: red;
     font-size: medium;
 }
 
 .form-group input,
 .form-group textarea {
-    width: 50%; /* Match style.css input[id^="contact-name"] */
+    width: 50%;
     height: 50px;
     padding: 1rem;
     font-size: 1.6rem;
@@ -136,13 +237,13 @@ section {
 }
 
 .form-group textarea {
-    height: 150px; /* Adjust for textarea */
+    height: 150px;
     resize: vertical;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    font-style: italic; /* Match style.css input[id^="contact-name"]::placeholder */
+    font-style: italic;
     font-size: medium;
     color: black;
 }
@@ -156,7 +257,7 @@ section {
 }
 
 #contact-form .static-btn {
-    display: inline-block; /* Match style.css .static-btn */
+    display: inline-block;
     padding: 1.5rem 3rem;
     font-size: 2rem;
     font-weight: 700;
@@ -168,10 +269,10 @@ section {
 }
 
 #contact-form .static-btn:hover {
-    background-color: var(--color-sec); /* Consistent hover effect */
+    background-color: var(--color-sec);
 }
 
-/* Search Modal Enhancements */
+/* Search Modal */
 .search-modal {
     display: none;
     position: fixed;
@@ -187,7 +288,7 @@ section {
 .modal-content {
     width: 80%;
     max-width: 60rem;
-    margin: 20% auto; /* Match style.css .modal-content */
+    margin: 20% auto;
     position: relative;
     text-align: center;
     background-color: transparent;
@@ -206,7 +307,7 @@ section {
 
 .close-modal {
     position: absolute;
-    top: 2rem; /* Match style.css .close-modal */
+    top: 2rem;
     right: 3rem;
     color: var(--white);
     font-size: 5rem;
@@ -220,7 +321,7 @@ section {
 }
 
 #search-form input {
-    width: 100%; /* Match style.css form input */
+    width: 100%;
     border: none;
     border-bottom: 2px solid var(--white);
     outline: none;
@@ -231,7 +332,7 @@ section {
 }
 
 #search-form input::placeholder {
-    color: var(--white); /* Match style.css ::placeholder */
+    color: var(--white);
     font-size: 1.6rem;
 }
 
@@ -252,10 +353,70 @@ section {
     background: var(--color-sec);
 }
 
+/* Footer */
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 3rem 0;
+    text-align: center;
+}
+
 /* Responsive Adjustments */
 @media screen and (max-width: 600px) {
+    .nav-ul {
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        margin-top: 1rem;
+        background: var(--black);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+
+    .nav-ul li {
+        width: 100%;
+        text-decoration: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .nav-ul li:last-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .nav-link::before,
+    .current::before {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-ul .close {
+        display: block;
+    }
+
+    .nav-ul.show {
+        display: flex;
+    }
+
+    .nav-ul.show .close {
+        display: block;
+    }
+
+    .show {
+        display: flex;
+    }
+
+    .hide {
+        display: none;
+    }
+
     #contact-hero h1 {
-        font-size: 6rem; /* Match #intro h1 at this breakpoint */
+        font-size: 6rem;
     }
 
     #contact-hero p {
@@ -263,12 +424,12 @@ section {
     }
 
     .form-group label {
-        font-size: medium; /* Adjust for smaller screens */
+        font-size: medium;
     }
 
     .form-group input,
     .form-group textarea {
-        width: 100%; /* Full width on mobile */
+        width: 100%;
     }
 
     .modal-content {
