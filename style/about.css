@@ -1,4 +1,4 @@
-/* About Page Specific Styles */
+/* Contact Page Specific Styles */
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 
@@ -13,6 +13,7 @@
     --light-grey: #ccc;
     --dark-grey: #222831;
     --pink: #e9204f;
+    --typing-grey: #333; /* New variable for typing text color */
 }
 
 * {
@@ -30,10 +31,6 @@ p {
     line-height: 1.5;
 }
 
-img {
-    width: 100%;
-}
-
 section {
     width: 100%;
     padding: 8rem 0;
@@ -46,97 +43,79 @@ section {
     padding: 0 2rem;
 }
 
-/* About Intro Section */
-#about-intro {
-    width: 100%;
+/* Contact Hero Section */
+#contact-hero {
     background-color: var(--black);
     color: var(--white);
-    padding: 0;
+    text-align: center;
 }
 
-#about-intro .container {
-    background: url('../images/background-small.jpeg') no-repeat;
-    background-position-x: 70%;
-    background-size: 100%;
-}
-
-#about-intro .intro-text {
-    width: 80%;
-    padding: 8rem 0;
-}
-
-#about-intro h1 {
-    font-size: 8rem;
+#contact-hero h1 {
+    font-size: 6rem;
     font-weight: 700;
-    line-height: 1;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
-#about-intro p {
+#contact-hero p {
     font-size: 2rem;
     color: var(--color-grey);
 }
 
-/* Team Section */
-#team {
+/* Contact Form Section */
+#contact-form-section {
     background-color: var(--color-grey);
 }
 
-#team h2 {
-    font-size: 5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+#contact-form {
+    max-width: 60rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-    margin-top: 2rem;
 }
 
-.team-member {
-    text-align: center;
-    padding: 2rem;
-    background: var(--white);
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: none; /* Hidden by default, shown by jQuery */
+.form-group {
+    display: flex;
+    flex-direction: column;
 }
 
-.team-member img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 2px solid var(--pink);
-}
-
-.team-member h3 {
-    font-size: 2rem;
+.form-group label {
+    font-size: 1.8rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
+    color: var(--black);
 }
 
-.team-member p {
-    font-size: 1.4rem;
+.form-group input,
+.form-group textarea {
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: 2px solid var(--pink);
+    border-radius: 5px;
+    background: var(--white);
+    color: var(--typing-grey); /* Text color while typing */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
     color: var(--dark-grey);
 }
 
-/* About Contact Section */
-#about-contact {
-    text-align: center;
-    background-color: var(--white);
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-sec); /* Orange border on focus */
+    box-shadow: 0 0 5px rgba(219, 100, 0, 0.3); /* Subtle glow */
+    color: var(--typing-grey); /* Ensure text remains grey when focused */
 }
 
-#about-contact h2 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
+.form-group textarea {
+    resize: vertical;
+    min-height: 15rem;
 }
 
-#about-contact .btn {
+#contact-form .btn {
     display: inline-block;
     padding: 1.5rem 3rem;
     font-size: 2rem;
@@ -149,9 +128,10 @@ section {
     overflow: hidden;
     z-index: 1;
     transition: all 0.3s;
+    cursor: pointer;
 }
 
-#about-contact .btn::before {
+#contact-form .btn::before {
     content: "";
     position: absolute;
     left: 0;
@@ -164,11 +144,11 @@ section {
     z-index: -1;
 }
 
-#about-contact .btn:hover {
+#contact-form .btn:hover {
     background-color: var(--color-sec);
 }
 
-#about-contact .btn:hover::before {
+#contact-form .btn:hover::before {
     transform: translateX(0);
 }
 
@@ -255,24 +235,16 @@ section {
 
 /* Responsive Adjustments */
 @media screen and (max-width: 600px) {
-    #about-intro .intro-text {
-        width: 100%;
-    }
-
-    #about-intro h1 {
-        font-size: 6rem;
-    }
-
-    #team h2 {
+    #contact-hero h1 {
         font-size: 4rem;
     }
 
-    #about-contact h2 {
-        font-size: 3rem;
+    #contact-hero p {
+        font-size: 1.6rem;
     }
 
-    .team-member img {
-        width: 120px;
-        height: 120px;
+    .modal-content {
+        margin: 30% auto;
+        width: 90%;
     }
 }
