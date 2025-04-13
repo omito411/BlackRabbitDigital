@@ -35,10 +35,6 @@ p {
     line-height: 1.5;
 }
 
-img {
-    width: 100%;
-}
-
 section {
     width: 100%;
     padding: 8rem 0;
@@ -148,27 +144,27 @@ nav .logo {
 }
 
 /* Contact Hero Section */
-#contact-hero {
+section#contact-hero {
     width: 100%;
     background-color: var(--black);
     color: var(--white);
     padding: 0;
 }
 
-#contact-hero .container {
+section#contact-hero .container {
     background: url('../images/background-small.jpeg') no-repeat;
     background-position-x: 70%;
     background-size: 100%;
     padding: 8rem 0;
 }
 
-#contact-hero .intro-text {
+section#contact-hero .intro-text {
     width: 80%;
     margin: 0 auto;
     text-align: center;
 }
 
-#contact-hero h1 {
+section#contact-hero .intro-text h1 {
     font-size: 8rem;
     font-weight: 700;
     line-height: 1;
@@ -176,21 +172,21 @@ nav .logo {
     color: var(--white);
 }
 
-#contact-hero p {
+section#contact-hero .intro-text p {
     font-size: 2rem;
     color: var(--color-grey);
 }
 
 /* Contact Form Section */
-#contact-form-section {
+section#contact-form-section {
     background-color: var(--color-grey);
 }
 
-#contact-form-section .container {
+section#contact-form-section .container {
     text-align: center;
 }
 
-#contact-form {
+form#contact-form {
     font-size: x-large;
     padding: 35px;
     margin-top: 0;
@@ -256,7 +252,7 @@ nav .logo {
     color: var(--typing-grey);
 }
 
-#contact-form .static-btn {
+form#contact-form .static-btn {
     display: inline-block;
     padding: 1.5rem 3rem;
     font-size: 2rem;
@@ -268,12 +264,12 @@ nav .logo {
     transition: background-color 0.3s;
 }
 
-#contact-form .static-btn:hover {
+form#contact-form .static-btn:hover {
     background-color: var(--color-sec);
 }
 
 /* Search Modal */
-.search-modal {
+div#search-modal {
     display: none;
     position: fixed;
     left: 0;
@@ -285,7 +281,7 @@ nav .logo {
     z-index: 1000;
 }
 
-.modal-content {
+div#search-modal .modal-content {
     width: 80%;
     max-width: 60rem;
     margin: 20% auto;
@@ -305,7 +301,7 @@ nav .logo {
     }
 }
 
-.close-modal {
+div#search-modal .close-modal {
     position: absolute;
     top: 2rem;
     right: 3rem;
@@ -314,13 +310,13 @@ nav .logo {
     cursor: pointer;
 }
 
-#search-form {
+div#search-modal form#search-form {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
 
-#search-form input {
+div#search-modal form#search-form input {
     width: 100%;
     border: none;
     border-bottom: 2px solid var(--white);
@@ -331,12 +327,12 @@ nav .logo {
     background-color: transparent;
 }
 
-#search-form input::placeholder {
+div#search-modal form#search-form input::placeholder {
     color: var(--white);
     font-size: 1.6rem;
 }
 
-#search-form button {
+div#search-modal form#search-form button {
     padding: 1rem 2rem;
     background: var(--pink);
     border: none;
@@ -349,7 +345,7 @@ nav .logo {
     gap: 0.5rem;
 }
 
-#search-form button:hover {
+div#search-modal form#search-form button:hover {
     background: var(--color-sec);
 }
 
@@ -363,6 +359,7 @@ footer {
 
 /* Responsive Adjustments */
 @media screen and (max-width: 600px) {
+    /* Header */
     .nav-ul {
         width: 100%;
         flex-direction: column;
@@ -415,14 +412,16 @@ footer {
         display: none;
     }
 
-    #contact-hero h1 {
+    /* Hero Section */
+    section#contact-hero h1 {
         font-size: 6rem;
     }
 
-    #contact-hero p {
+    section#contact-hero p {
         font-size: 1.6rem;
     }
 
+    /* Form Section */
     .form-group label {
         font-size: medium;
     }
@@ -432,7 +431,8 @@ footer {
         width: 100%;
     }
 
-    .modal-content {
+    /* Search Modal */
+    div#search-modal .modal-content {
         margin: 30% auto;
         width: 90%;
     }
