@@ -1,10 +1,11 @@
-// Ensure jQuery is loaded before executing this script
+// jQuery for Team Animation
 $(document).ready(function(){
-    // Meet the Team button animation
+    console.log("jQuery loaded");
     $("button.about-click").click(function(){
-        $("#div1").css("display", "flex").hide().fadeIn(3000);
-        $("#div2").css("display", "flex").hide().fadeIn(6000);
-        $("#div3").css("display", "flex").hide().fadeIn(9000);
+        console.log("Team button clicked");
+        $("#div1").css("display", "block").hide().fadeIn(3000);
+        $("#div2").css("display", "block").hide().fadeIn(6000);
+        $("#div3").css("display", "block").hide().fadeIn(9000);
     });
 });
 
@@ -14,8 +15,8 @@ const close = document.querySelector(".close");
 const navUL = document.querySelector(".nav-ul");
 
 if (hamburger && close && navUL) {
+    console.log("Hamburger elements found");
     hamburger.addEventListener("click", () => {
-
         console.log("Hamburger clicked");
         navUL.classList.toggle("show");
         hamburger.classList.toggle("hide");
@@ -26,48 +27,54 @@ if (hamburger && close && navUL) {
         navUL.classList.toggle("show");
         hamburger.classList.toggle("hide");
     });
-
 } else {
-    console.error("Hamburger, close, or nav-ul not found")
+    console.error("Hamburger, close, or nav-ul not found:", {
+        hamburger: !!hamburger,
+        close: !!close,
+        navUL: !!navUL
+    });
 }
 
-
-// Prevent form reload on submit
-document.addEventListener('submit', event => {
-    event.preventDefault();
-    formSubmission();
-});
-
-// 🔧 Fix: Define Search Modal
-const modal = document.getElementById("search-modal"); // ✅ Fix added
-
+// Search Modal
+const modal = document.getElementById("search-modal");
 const btn = document.querySelector(".search");
 const closeModal = document.querySelector(".close-modal");
 
 if (btn && modal && closeModal) {
+    console.log("Search elements found");
     btn.addEventListener("click", openPopup);
     closeModal.addEventListener("click", closePopup);
 
     function openPopup(e) {
         e.preventDefault();
+        console.log("Search icon clicked, opening modal");
         modal.style.display = "block";
     }
 
     function closePopup() {
+        console.log("Closing modal");
         modal.style.display = "none";
     }
 } else {
-    console.error("Search-modal, button, or, close button not found");
+    console.error("Search modal, button, or close button not found:", {
+        modal: !!modal,
+        btn: !!btn,
+        closeModal: !!closeModal
+    });
 }
 
-// Form Submission Handling
-const searchForm = 
-document.getElementById("search-form");
-if (searchForm){
+// Basic Search Form Submission
+const searchForm = document.getElementById("search-form");
+if (searchForm) {
+    console.log("Search form found");
     searchForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const query = document.getElementById("search-input").value;
-        alert("searching for: " + query); // replace with actual search logic
+        console.log("Search submitted with query:", query);
+        alert("Searching for: " + query); // Replace with actual search logic
         closePopup();
-    })
+    });
+} else {
+    console.error("Search form not found");
 }
+

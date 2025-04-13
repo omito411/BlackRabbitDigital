@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../style/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/about.css">
 </head>
 <body>
@@ -44,21 +46,20 @@
         <section id="team" data-aos="fade-up">
             <div class="container">
                 <h2>Meet Our Team</h2>
-            <!-- ✅ Fix: Added missing button -->
                 <button class="about-click btn btn-dark">Click to Meet the Team</button>
 
                 <div class="team-grid">
-                    <div class="team-member" id="div1" style="display: none;">
+                    <div class="team-member" id="div1">
                         <img src="../images/team1.jpg" alt="Tivere Orugbo">
                         <h3>Tivere Orugbo</h3>
                         <p>Lead Developer</p>
                     </div>
-                    <div class="team-member" id="div2" style="display: none;">
+                    <div class="team-member" id="div2">
                         <img src="../images/team2.jpg" alt="Stephen Omitogun">
                         <h3>Stephen Omitogun</h3>
                         <p>Developer</p>
                     </div>
-                    <div class="team-member" id="div3" style="display: none;">
+                    <div class="team-member" id="div3">
                         <img src="../images/team3.jpg" alt="Aisling Dwyer">
                         <h3>Aisling Dwyer</h3>
                         <p>Digital and Marketing</p>
@@ -75,25 +76,24 @@
         </section>
     </main>
 
-    <!-- Search Modal-->
-     <div id="search-modal" class="search-modal">
+    <!-- Search Modal -->
+    <div id="search-modal" class="search-modal">
         <div class="modal-content">
-            <span class="close-modal">x</span>
+            <span class="close-modal">×</span>
             <form id="search-form">
-                <input type="text"
-                placeholder="Search..." id="search-input">
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <input type="text" placeholder="Search..." id="search-input">
+                <button type="submit"><i class="fas fa-search"></i> Search</button>
             </form>
         </div>
     </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 AkPabor Digital. All rights reserved.</p>
+            <p>© 2025 AkPabor Digital. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="../js/about-script.js"></script>
     <script>AOS.init();</script>

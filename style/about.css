@@ -1,6 +1,8 @@
+/* About Page Specific Styles */
+
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 
-:root{
+:root {
     --white: #fff;
     --black: #000;
     --blue: #31326f;
@@ -10,226 +12,267 @@
     --color-grey: #e3eef8;
     --light-grey: #ccc;
     --dark-grey: #222831;
-    --pink:#e9204f;
+    --pink: #e9204f;
 }
 
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--color-grey);
 }
 
-html{
-    font-size:10px;
-    scroll-behavior: smooth;
-}
-
-p{
+p {
     font-size: 1.6rem;
     line-height: 1.5;
 }
-img{
-    width:100%
+
+img {
+    width: 100%;
 }
 
-section{
+section {
     width: 100%;
     padding: 8rem 0;
 }
-.container{
+
+.container {
     width: 100%;
     max-width: 110rem;
     margin: 0 auto;
-    padding:0 2rem;
+    padding: 0 2rem;
 }
 
-/* Header Section */
-header{
-    width:100%;
-    background-color: var(--black);
-    padding: 5px 0;
-}
-nav{
+/* About Intro Section */
+#about-intro {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 1rem 1.5rem;
-}
-nav .logo{
-    width: 15rem;
-}
-.nav-ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-}
-
-.nav-ul li a {
-    display: inline-block;
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1rem 0;
-    margin-left: 3rem;
+    background-color: var(--black);
     color: var(--white);
+    padding: 0;
 }
 
-.nav-link,
-.current{
-    position: relative;
+#about-intro .container {
+    background: url('../images/background-small.jpeg') no-repeat;
+    background-position-x: 70%;
+    background-size: 100%;
 }
 
-.nav-link::before,
-.current::before{
-    position:absolute;
-    content: "";
-    left: 0;
-    bottom:-3px;
-    width: 50%;
-    height: 2px;
-    background-color: var(--pink);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.6s;
-}
-.current::before{
-    transform: scaleX(1);
-}
-.nav-link:hover::before{
-    transform: scaleX(1);
+#about-intro .intro-text {
+    width: 80%;
+    padding: 8rem 0;
 }
 
-.hamburger,
-.close,
-.search{
-    font-size: 2.5rem;
-    color: var(--white);
-    cursor: pointer;
-}
-.hamburger{
-    display: none;
+#about-intro h1 {
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 5rem;
 }
 
-.search{
+#about-intro p {
     font-size: 2rem;
+    color: var(--color-grey);
 }
 
-.close{
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1.5rem 3rem 0 0;
-    display: none;
+/* Team Section */
+#team {
+    background-color: var(--color-grey);
 }
 
-/* Common Styles for All Pages */
-.heading {
+#team h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
     text-align: center;
-    margin-bottom: 4rem;
 }
 
-.btn {
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default, shown by jQuery */
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 2px solid var(--pink);
+}
+
+.team-member h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    font-size: 1.4rem;
+    color: var(--dark-grey);
+}
+
+/* About Contact Section */
+#about-contact {
+    text-align: center;
+    background-color: var(--white);
+}
+
+#about-contact h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+#about-contact .btn {
     display: inline-block;
     padding: 1.5rem 3rem;
     font-size: 2rem;
     font-weight: 700;
     color: var(--white);
-    background-color: var(--pink);
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
+    border: 2px solid var(--pink);
+    background-color: transparent;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s;
 }
-.btn:hover {
+
+#about-contact .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--pink);
+    transform: translateX(-100%);
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+#about-contact .btn:hover {
     background-color: var(--color-sec);
 }
 
-/* About Page */
-.about-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem;
-}
-.about-text {
-    text-align: center;
-    max-width: 600px;
+#about-contact .btn:hover::before {
+    transform: translateX(0);
 }
 
-/* Portfolio Page */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 2rem;
-    padding: 4rem 2rem;
+/* Search Modal Enhancements */
+.search-modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
 }
-.portfolio-item {
-    background-color: var(--white);
+
+.modal-content {
+    width: 80%;
+    max-width: 60rem;
+    margin: 15% auto;
+    position: relative;
+    text-align: center;
+    background-color: var(--black);
     padding: 2rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-.portfolio-item:hover {
-    transform: scale(1.05);
-}
-
-/* Price Checker Page */
-.form-container {
-    max-width: 600px;
-    margin: 0 auto;
-}
-.form-container input {
-    width: 100%;
-    padding: 1rem;
-    margin: 1rem 0;
-    border: 1px solid var(--light-grey);
+    border: 2px solid var(--pink);
     border-radius: 5px;
+    animation: slide ease 0.8s;
 }
 
-/* Contact Page */
-#contact {
-    background-color: var(--dark-grey);
+@keyframes slide {
+    0% {
+        transform: translateY(-30rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
     color: var(--white);
-    text-align: center;
-    padding: 4rem 0;
+    font-size: 3rem;
+    cursor: pointer;
 }
-.contact form {
-    max-width: 500px;
-    margin: 0 auto;
+
+#search-form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
-.contact form input,
-.contact form textarea {
-    width: 100%;
+
+#search-form input {
+    flex: 1;
     padding: 1rem;
-    margin: 1rem 0;
-    border: none;
-    border-radius: 5px;
+    font-size: 1.6rem;
+    border: 2px solid var(--pink);
+    background: var(--white);
+    color: var(--black);
+    border-radius: 3px;
 }
-.contact form button {
+
+#search-form input::placeholder {
+    color: var(--dark-grey);
+}
+
+#search-form button {
+    padding: 1rem 2rem;
     background: var(--pink);
-    color: var(--white);
-    padding: 1.2rem 2rem;
     border: none;
+    color: var(--white);
     font-size: 1.6rem;
     cursor: pointer;
-    transition: 0.3s;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
-.contact form button:hover {
+
+#search-form button:hover {
     background: var(--color-sec);
 }
 
-/* Footer Section */
-footer{
-    background-color: var(--black);
-    color: var(--white);
-    padding: 3rem 0;
-    text-align: center;
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+    #about-intro .intro-text {
+        width: 100%;
+    }
+
+    #about-intro h1 {
+        font-size: 6rem;
+    }
+
+    #team h2 {
+        font-size: 4rem;
+    }
+
+    #about-contact h2 {
+        font-size: 3rem;
+    }
+
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
 }
