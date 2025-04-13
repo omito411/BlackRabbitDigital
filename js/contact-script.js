@@ -1,49 +1,69 @@
-function submitProjectForm() {
-    const nameInput = document.getElementById("name").value.trim();
-    const emailInput = document.getElementById("email").value.trim();
-    const projectType = document.getElementById("project-type").value;
-
-    if (nameInput === "" || emailInput === "" || projectType === "") {
-        alert("Please fill out all required fields.");
-        return;
-    }
-
-    const confirmationMessage = document.getElementById("confirmation-message");
-    confirmationMessage.innerHTML = `Thank you, <strong>${nameInput}</strong>. 
-    We have received your request for <strong>${projectType.replace("-", " ")}</strong>. 
-    Our team will contact you soon at <strong>${emailInput}</strong>.`;
-    confirmationMessage.style.display = "block";
-}
-
-// Navigation Toggle
+// Hamburger Menu Toggle
 const hamburger = document.querySelector(".hamburger");
 const close = document.querySelector(".close");
 const navUL = document.querySelector(".nav-ul");
 
-hamburger.addEventListener("click", () => {
-    navUL.classList.toggle("show");
-    hamburger.classList.toggle("hide");
-});
+if (hamburger && close && navUL) {
+    console.log("Hamburger elements found");
+    hamburger.addEventListener("click", () => {
+        console.log("Hamburger clicked");
+        navUL.classList.toggle("show");
+        hamburger.classList.toggle("hide");
+    });
 
-close.addEventListener("click", () => {
-    navUL.classList.toggle("show");
-    hamburger.classList.toggle("hide");
-});
+    close.addEventListener("click", () => {
+        console.log("Close clicked");
+        navUL.classList.toggle("show");
+        hamburger.classList.toggle("hide");
+    });
+} else {
+    console.error("Hamburger, close, or nav-ul not found:", {
+        hamburger: !!hamburger,
+        close: !!close,
+        navUL: !!navUL
+    });
+}
 
-// 🔧 Fix: Define Search Modal
-const modal = document.getElementById("modal");
-
+// Search Modal
+const modal = document.getElementById("search-modal");
 const btn = document.querySelector(".search");
 const closeModal = document.querySelector(".close-modal");
 
-btn.addEventListener("click", openPopup);
-closeModal.addEventListener("click", closePopup);
+if (btn && modal && closeModal) {
+    console.log("Search elements found");
+    btn.addEventListener("click", openPopup);
+    closeModal.addEventListener("click", closePopup);
 
-function openPopup(e) {
-    e.preventDefault();
-    modal.style.display = "block";
+    function openPopup(e) {
+        e.preventDefault();
+        console.log("Search icon clicked, opening modal");
+        modal.style.display = "block";
+    }
+
+    function closePopup() {
+        console.log("Closing modal");
+        modal.style.display = "none";
+    }
+} else {
+    console.error("Search modal, button, or close button not found:", {
+        modal: !!modal,
+        btn: !!btn,
+        closeModal: !!closeModal
+    });
 }
 
-function closePopup() {
-    modal.style.display = "none";
+// Basic Search Form Submission
+const searchForm = document.getElementById("search-form");
+if (searchForm) {
+    console.log("Search form found");
+    searchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const query = document.getElementById("search-input").value;
+        console.log("Search submitted with query:", query);
+        alert("Searching for: " + query);
+        closePopup();
+    });
+} else {
+    console.error("Search form not found");
 }
+
