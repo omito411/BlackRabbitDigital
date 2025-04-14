@@ -44,6 +44,14 @@ if (btn && modal && closeModal) {
         console.log("Closing modal");
         modal.style.display = "none";
     }
+
+    // Close modal when clicking outside
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            console.log("Clicked outside modal, closing");
+            closePopup();
+        }
+    });
 } else {
     console.error("Search modal, button, or close button not found:", {
         modal: !!modal,
@@ -52,16 +60,24 @@ if (btn && modal && closeModal) {
     });
 }
 
-// Basic Search Form Submission
+// Search Form Submission
 const searchForm = document.getElementById("search-form");
 if (searchForm) {
     console.log("Search form found");
     searchForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        const query = document.getElementById("search-input").value;
-        console.log("Search submitted with query:", query);
-        alert("Searching for: " + query);
-        closePopup();
+        console.log("Submit button clicked");
+        const query = document.getElementById("search-input")?.value.trim() || "";
+        if (query) {
+            console.log("Search submitted with query:", query);
+            alert("Searching for: " + query);
+            // Optional: Redirect to search results
+            // window.location.href = `/search?q=${encodeURIComponent(query)}`;
+            closePopup();
+        } else {
+            console.log("No query entered");
+            alert("Please enter a search term.");
+        }
     });
 } else {
     console.error("Search form not found");
