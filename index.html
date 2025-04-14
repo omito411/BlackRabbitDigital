@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AkPabor Digital | Media Website</title>
     <link rel="shortcut icon" href="images/akpa.ico">
-    <!-- Bootstrap CSS + Font icons -->
     <link rel="stylesheet" href="style/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/homepage.css">
 </head>
 <body>
     <header>
@@ -31,6 +31,17 @@
         </div>
     </header>
 
+    <!-- Search Modal -->
+    <div id="modal" class="search-modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <form id="search-form">
+                <input type="text" placeholder="Search..." id="search-input">
+                <button type="submit"><i class="fas fa-search"></i> Search</button>
+            </form>
+        </div>
+    </div>
+
     <main>
         <section id="intro">
             <div class="container">
@@ -51,11 +62,14 @@
 
         <section id="carousel-section" data-aos="flip-left" data-aos-duration="2000">
             <div class="carousel-container" id="carousel">
-                <img src="images/left.png" alt="left" id="slide-left" class="arrow">
-                <div class="thumbnail"><img src="images/carousel1-small.webp" alt="Project 1"></div>
-                <div class="thumbnail"><img src="images/carousel2-small.webp" alt="Project 2"></div>
-                <div class="thumbnail"><img src="images/carousel3-small.webp" alt="Project 3"></div>
-                <img src="images/right.png" alt="right" id="slide-right" class="arrow">
+                <img src="images/left.png" alt="Previous slide" id="slide-left" class="arrow" aria-label="Previous slide">
+                <div class="carousel-track">
+                    <div class="thumbnail"><img src="images/carousel1-small.webp" alt="Project 1"></div>
+                    <div class="thumbnail"><img src="images/carousel2-small.webp" alt="Project 2"></div>
+                    <div class="thumbnail"><img src="images/carousel3-small.webp" alt="Project 3"></div>
+                </div>
+                <img src="images/right.png" alt="Next slide" id="slide-right" class="arrow" aria-label="Next slide">
+                <div class="carousel-dots" id="carousel-dots"></div>
             </div>
         </section>
 
@@ -73,13 +87,12 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 AkPabor Digital. All rights reserved.</p>
+            <p>© 2025 AkPabor Digital. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/script.js"></script>
-    <script>AOS.init();</script>
 </body>
 </html>
