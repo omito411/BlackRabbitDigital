@@ -66,4 +66,3 @@ if (searchForm) {
 } else {
     console.error("Search form not found");
 }
-
