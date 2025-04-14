@@ -268,8 +268,8 @@ form#contact-form .static-btn:hover {
     background-color: var(--color-sec);
 }
 
-/* Search Modal */
-div#search-modal {
+/* Search Modal Enhancements */
+.search-modal {
     display: none;
     position: fixed;
     left: 0;
@@ -281,14 +281,16 @@ div#search-modal {
     z-index: 1000;
 }
 
-div#search-modal .modal-content {
+.modal-content {
     width: 80%;
     max-width: 60rem;
-    margin: 20% auto;
+    margin: 15% auto;
     position: relative;
     text-align: center;
-    background-color: transparent;
+    background-color: var(--black);
     padding: 2rem;
+    border: 2px solid var(--pink);
+    border-radius: 5px;
     animation: slide ease 0.8s;
 }
 
@@ -301,38 +303,36 @@ div#search-modal .modal-content {
     }
 }
 
-div#search-modal .close-modal {
+.close-modal {
     position: absolute;
-    top: 2rem;
-    right: 3rem;
+    top: 1rem;
+    right: 1.5rem;
     color: var(--white);
-    font-size: 5rem;
+    font-size: 3rem;
     cursor: pointer;
 }
 
-div#search-modal form#search-form {
+#search-form {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
 
-div#search-modal form#search-form input {
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid var(--white);
-    outline: none;
-    padding: 0.1rem;
-    color: var(--white);
+#search-form input {
+    flex: 1;
+    padding: 1rem;
     font-size: 1.6rem;
-    background-color: transparent;
+    border: 2px solid var(--pink);
+    background: var(--white);
+    color: var(--black);
+    border-radius: 3px;
 }
 
-div#search-modal form#search-form input::placeholder {
-    color: var(--white);
-    font-size: 1.6rem;
+#search-form input::placeholder {
+    color: var(--dark-grey);
 }
 
-div#search-modal form#search-form button {
+#search-form button {
     padding: 1rem 2rem;
     background: var(--pink);
     border: none;
@@ -345,7 +345,7 @@ div#search-modal form#search-form button {
     gap: 0.5rem;
 }
 
-div#search-modal form#search-form button:hover {
+#search-form button:hover {
     background: var(--color-sec);
 }
 
