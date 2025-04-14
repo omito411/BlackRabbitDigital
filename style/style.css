@@ -419,76 +419,69 @@ nav .logo{
 }
 
 /* carousel */
-.carousel-container{
-    max-width: 900px;
-    margin: 0 auto;
-    padding-top: 0.5rem;
-    padding-bottom: 0;
-    
-}
-.slide-container{
-    max-width: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-}
 
 .arrow{
     width: 2rem;
     margin: 0 1rem;
 }
 
-#carousel{
-    width: 100%;
+.carousel {
+    max-width: 800px; /* Matches your container */
     margin: 0 auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    
+    position: relative;
 }
 
-#carousel::-webkit-scrollbar{
-    height: 5px;
-    width: 2px;
-    border: 1px solid #d5d5d5;
-    background: #d5d5d5;
-}
-#carousel::-webkit-scrollbar-track{
-    --webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-
-}
-#carousel::-webkit-scrollbar-thumb{
-    background-color: var(--pink);
-    outline: 1px solid #eee;
+.carousel-inner {
+    border-radius: 5px; /* Matches your theme */
+    overflow: hidden; /* Prevents image overflow */
 }
 
-#carousel .thumbnail{
-    flex: 0 0 auto;
-    object-fit: cover;
-    cursor: pointer;
-    margin: 5px;
-    overflow: hidden;
-    transform: scale(.95);
-    transition: all .3s;
+.carousel-item img {
+    width: 100%;
+    height: 400px; /* Fixed height for consistency */
+    object-fit: cover; /* Scales images without distortion */
+    object-position: center; /* Centers image */
+    display: block;
 }
 
-#carousel .thumbnail:hover{
-    transform: scale(1);
+.carousel-item {
+    transition: opacity 0.6s ease-in-out; /* Smooth fade */
 }
 
-.carousel-details{
-    text-align: center;
-    background-color: #fff;
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+    background: none;
+    border: none;
 }
 
-.carousel-details h2{
-    font-size: 2rem;
-    font-weight: 700;
-    padding-top: 2rem;
-    
+.carousel-control-prev img,
+.carousel-control-next img {
+    width: 40px;
+    height: auto;
+    transition: opacity 0.3s;
+}
+
+.carousel-control-prev img:hover,
+.carousel-control-next img:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .carousel-item img {
+        height: 300px; /* Smaller for mobile */
+    }
+
+    .carousel-control-prev img,
+    .carousel-control-next img {
+        width: 30px;
+    }
 }
 
 /* Our work text */
