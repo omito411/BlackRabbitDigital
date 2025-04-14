@@ -124,19 +124,21 @@ header .nav-ul.show {
     margin: 0 auto;
     padding: 1rem 0;
     position: relative;
+    overflow: hidden; /* Ensure container clips overflow */
 }
 
 #carousel-section .carousel-track {
-    display: flex;
-    width: calc(100% * 4);
+    display: flex; /* Align slides side by side */
+    width: calc(100% * 4); /* 4 slides, each 100% width */
     height: 400px;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out; /* Smooth sliding */
 }
 
 #carousel-section .thumbnail {
-    flex: 0 0 100%;
+    flex: 0 0 100%; /* Each slide takes full container width */
     height: 100%;
+    min-width: 100%; /* Ensure slides don’t shrink */
+    position: relative; /* Explicitly not absolute */
 }
 
 #carousel-section .thumbnail img {
@@ -145,6 +147,7 @@ header .nav-ul.show {
     object-fit: cover;
     object-position: center;
     border-radius: 5px;
+    display: block; /* Remove any inline spacing */
 }
 
 #carousel-section .carousel-dots {
