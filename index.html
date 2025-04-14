@@ -61,16 +61,29 @@
         </section>
 
         <section id="carousel-section" data-aos="flip-left" data-aos-duration="2000">
-            <div class="carousel-container" id="carousel">
-                <img src="images/left.png" alt="Previous slide" id="slide-left" class="arrow" aria-label="Previous slide">
-                <div class="carousel-track">
-                    <div class="thumbnail"><img src="images/carousel1-small.webp" alt="Project 1"></div>
-                    <div class="thumbnail"><img src="images/carousel2-small.webp" alt="Project 2"></div>
-                    <div class="thumbnail"><img src="images/carousel3-small.webp" alt="Project 3"></div>
-                    <div class="thumbnail"><img src="images/carousel4-small.webp" alt="Project 4"></div>
+            <div id="projectCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/carousel1-small.webp" class="d-block w-100" alt="Project 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/carousel2-small.webp" class="d-block w-100" alt="Project 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/carousel3-small.webp" class="d-block w-100" alt="Project 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/carousel4-small.webp" class="d-block w-100" alt="Project 4">
+                    </div>
                 </div>
-                <img src="images/right.png" alt="Next slide" id="slide-right" class="arrow" aria-label="Next slide">
-                <div class="carousel-dots" id="carousel-dots"></div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                    <img src="images/left.png" alt="left" class="arrow">
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                    <img src="images/right.png" alt="right" class="arrow">
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </section>
 
