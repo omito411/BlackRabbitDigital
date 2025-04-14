@@ -66,11 +66,9 @@ if (track && slides.length && leftArrow && rightArrow && dotsContainer) {
 
     const dots = document.querySelectorAll(".dot");
 
-    // Update slide visibility (fade transition)
+    // Update slide position (slide transition)
     function updateCarousel() {
-        slides.forEach((slide, index) => {
-            slide.classList.toggle("active", index === currentIndex);
-        });
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
         dots.forEach((dot, index) => {
             dot.classList.toggle("active", index === currentIndex);
         });
