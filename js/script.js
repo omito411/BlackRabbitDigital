@@ -43,7 +43,7 @@ function format(t) {
     return t < 10 ? '0' + t : t;
 }
 
-// Carousel (Updated to Remove Arrows)
+// Carousel
 const track = document.querySelector(".carousel-track");
 const slides = Array.from(document.querySelectorAll(".thumbnail"));
 const dotsContainer = document.getElementById("carousel-dots");
@@ -66,6 +66,7 @@ if (track && slides.length && dotsContainer) {
 
     // Update slide position (slide transition)
     function updateCarousel() {
+        console.log("Current Index:", currentIndex); // Debug log
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
         dots.forEach((dot, index) => {
             dot.classList.toggle("active", index === currentIndex);
