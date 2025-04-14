@@ -1,115 +1,171 @@
-// New Toggler //
+// Hamburger Menu
 const hamburger = document.querySelector(".hamburger");
 const close = document.querySelector(".close");
 const navUL = document.querySelector(".nav-ul");
 
-hamburger.addEventListener("click", () => {
-    navUL.classList.toggle("show");
-    hamburger.classList.toggle("hide");
-});
+if (hamburger && close && navUL) {
+    hamburger.addEventListener("click", () => {
+        navUL.classList.toggle("show");
+        hamburger.classList.toggle("hide");
+    });
 
-close.addEventListener("click", () => {
-    navUL.classList.toggle("show");
-    hamburger.classList.toggle("hide");
-});
+    close.addEventListener("click", () => {
+        navUL.classList.toggle("show");
+        hamburger.classList.toggle("hide");
+    });
+}
 
-// Countdown Timer //
-const countTo = "31 May 2025";  // 🔄 Updated for a future date
+// Countdown Timer
+const countTo = "31 May 2025";
+const countdownElement = document.getElementById("countdown");
 
-const c = setInterval(() => {
-    const endDate = new Date(countTo);
-    const currentDate = new Date();
-    const totalSeconds = (endDate - currentDate) / 1000;
+if (countdownElement) {
+    const c = setInterval(() => {
+        const endDate = new Date(countTo);
+        const currentDate = new Date();
+        const totalSeconds = (endDate - currentDate) / 1000;
 
-    const days = Math.floor(totalSeconds / 3600 / 24);  
-    const hours = Math.floor(totalSeconds / 3600) % 24;  
-    const mins = Math.floor(totalSeconds / 60) % 60;  
-    const secs = Math.floor(totalSeconds) % 60;  
+        const days = Math.floor(totalSeconds / 3600 / 24);
+        const hours = Math.floor(totalSeconds / 3600) % 24;
+        const mins = Math.floor(totalSeconds / 60) % 60;
+        const secs = Math.floor(totalSeconds) % 60;
 
-    const countDown = document.getElementById("countdown");
+        countdownElement.textContent = days + ' Days ' + format(hours) + ' Hrs : ' + format(mins) + ' Min : ' + format(secs) + ' s';
 
-    countDown.textContent = days + ' Days ' + format(hours) + ' Hrs : ' + format(mins) + ' Min : ' + format(secs) + ' s';
-
-    if (totalSeconds < 0) {
-        clearInterval(c);
-        countDown.textContent = "We're Live!";
-    }
-
-}, 1000);
+        if (totalSeconds < 0) {
+            clearInterval(c);
+            countdownElement.textContent = "We're Live!";
+        }
+    }, 1000);
+}
 
 function format(t) {
     return t < 10 ? '0' + t : t;
 }
 
-// Carousel //
-let thumbnails = document.getElementsByClassName("thumbnail");
-let carousels = document.getElementById("carousel");
-let buttonRight = document.getElementById("slide-right");
-let buttonLeft = document.getElementById("slide-left");
+// Carousel
+const track = document.querySelector(".carousel-track");
+const slides = Array.from(document.querySelectorAll(".thumbnail"));
+const leftArrow = document.getElementById("slide-left");
+const rightArrow = document.getElementById("slide-right");
+const dotsContainer = document.getElementById("carousel-dots");
 
-buttonLeft.addEventListener("click", () => {
-    carousels.scrollLeft -= 125;
-});
+if (track && slides.length && leftArrow && rightArrow && dotsContainer) {
+    let currentIndex = 0;
+    let autoPlayInterval;
 
-buttonRight.addEventListener("click", () => {
-    carousels.scrollLeft += 125;
-});
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+        dot.addEventListener("click", () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
 
-const maxScrollLeft = carousels.scrollWidth - carousels.clientWidth;
+    const dots = document.querySelectorAll(".dot");
 
-// AutoPlay carousel
-function autoPlay() {
-    if (carousels.scrollLeft > (maxScrollLeft - 1)) {
-        carousels.scrollLeft -= maxScrollLeft;
-    } else {
-        carousels.scrollLeft += 1;
+    // Update slide position
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentIndex);
+        });
     }
-}
 
-let play = setInterval(autoPlay, 50);
+    // Go to specific slide
+    function goToSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+        updateCarousel();
+    }
 
-// Pause carousel while hovering
-for (let i = 0; i < thumbnails.length; i++) {
-    thumbnails[i].addEventListener("mouseover", () => {
-        clearInterval(play);
+    // Next slide
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
+    }
+
+    // Previous slide
+    function prevSlide() {
+        goToSlide(currentIndex - 1);
+    }
+
+    // Auto-play
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Event listeners
+    leftArrow.addEventListener("click", () => {
+        stopAutoPlay();
+        prevSlide();
+        startAutoPlay();
     });
-    thumbnails[i].addEventListener("mouseout", () => {
-        play = setInterval(autoPlay, 50);
+
+    rightArrow.addEventListener("click", () => {
+        stopAutoPlay();
+        nextSlide();
+        startAutoPlay();
+    });
+
+    // Pause on hover
+    track.parentElement.addEventListener("mouseenter", stopAutoPlay);
+    track.parentElement.addEventListener("mouseleave", startAutoPlay);
+
+    // Start auto-play
+    startAutoPlay();
+}
+
+// Search Modal
+const modal = document.getElementById("modal");
+const searchBtn = document.querySelector(".search");
+const closeModalBtn = document.querySelector(".close-modal");
+const searchForm = document.getElementById("search-form");
+
+if (modal && searchBtn && closeModalBtn && searchForm) {
+    searchBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.style.display = "block";
+    });
+
+    closeModalBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // Close on outside click
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Placeholder form handling
+    searchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const query = document.getElementById("search-input").value.trim();
+        if (query) {
+            alert("Searching for: " + query);
+        }
     });
 }
 
-// 🔧 Search Modal Fix //
-const modal = document.getElementById("modal");  // ✅ Fix: Define modal
+// Form Submission
+const contactForm = document.getElementById("contact-form");
 
-const btn = document.querySelector(".search");
-const closeModal = document.querySelector(".close-modal");
-
-btn.addEventListener("click", openPopup);
-closeModal.addEventListener("click", closePopup);
-
-function openPopup(e) {
-    e.preventDefault();
-    modal.style.display = "block";
+if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        alert("Thank you " + name + " for your enquiry. We will be in contact with you shortly via the given email address, " + email);
+    });
 }
 
-function closePopup() {
-    modal.style.display = "none";
-}
-
-// Form Submission //
-function formSubmission() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-
-    window.alert("Thank you " + name + " for your enquiry. We will be in contact with you shortly via the given email address, " + email);
-}
-
-document.addEventListener('submit', event => {
-    event.preventDefault();
-    formSubmission();
-});
-
-// Page Animation //
+// AOS Initialization
 AOS.init({
     duration: 1000,
 });
