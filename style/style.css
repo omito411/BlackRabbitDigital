@@ -426,7 +426,7 @@ nav .logo{
 }
 
 .carousel {
-    max-width:1000px; /* Matches your container */
+    max-width:1200px; /* Matches your container */
     margin: 0 auto;
     position: relative;
 }
@@ -438,7 +438,7 @@ nav .logo{
 
 .carousel-item img {
     width: 100%;
-    height: 1000px; /* Fixed height for consistency */
+    height: 800px; /* Fixed height for consistency */
     object-fit: cover; /* Scales images without distortion */
     object-position: center; /* Centers image */
     display: block;
