@@ -153,18 +153,6 @@ if (modal && searchBtn && closeModalBtn && searchForm) {
     });
 }
 
-// Form Submission
-const contactForm = document.getElementById("contact-form");
-
-if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        alert("Thank you " + name + " for your enquiry. We will be in contact with you shortly via the given email address, " + email);
-    });
-}
-
 // AOS Initialization
 AOS.init({
     duration: 1000,
