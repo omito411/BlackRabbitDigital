@@ -1,0 +1,260 @@
+/* Homepage-specific styles */
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --pink: #e9204f;
+    --color-sec: #db6400;
+    --dark-grey: #222831;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Intro Section */
+#intro {
+    background-color: var(--black);
+    padding: 0;
+}
+
+#intro .container {
+    background: url('../images/background-small.jpeg') no-repeat;
+    background-position-x: 70%;
+    background-size: cover;
+}
+
+.intro-text {
+    width: 80%;
+    padding: 8rem 0;
+}
+
+.intro-text h1 {
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 5rem;
+    color: var(--white);
+}
+
+.line {
+    position: relative;
+}
+
+.line::before {
+    content: "";
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 5rem;
+    height: 3px;
+    background-color: var(--pink);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    border: 2px solid var(--pink);
+    background-color: transparent;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--pink);
+    transform: translateX(-100%);
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.btn:hover {
+    background-color: var(--color-sec);
+}
+
+.btn:hover::before {
+    transform: translateX(0);
+}
+
+/* Mini About Section */
+#mini-about {
+    background-color: var(--white);
+}
+
+.ab {
+    text-align: center;
+}
+
+.ab h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.ab p {
+    font-size: 2rem;
+    color: var(--dark-grey);
+    margin-bottom: 3rem;
+}
+
+/* Carousel Section */
+#carousel-section .carousel-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.thumbnail {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+#slide-left {
+    left: 10px;
+}
+
+#slide-right {
+    right: 10px;
+}
+
+.carousel-dots {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+    background: var(--white);
+    border: 2px solid var(--pink);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: var(--pink);
+}
+
+/* Contact Section */
+#contact {
+    background-color: var(--dark-grey);
+    padding: 10rem 0;
+}
+
+#contact h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#contact-form input {
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: 2px solid var(--pink);
+    border-radius: 5px;
+    background: var(--white);
+    color: var(--black);
+}
+
+#contact-form .btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .intro-text h1 {
+        font-size: 6rem;
+    }
+
+    .ab h2 {
+        font-size: 4rem;
+    }
+
+    .ab p {
+        font-size: 1.6rem;
+    }
+
+    .carousel-container {
+        max-width: 100%;
+    }
+
+    .arrow {
+        width: 30px;
+    }
+
+    #contact h2 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .intro-text {
+        width: 100%;
+    }
+
+    .intro-text h1 {
+        font-size: 5rem;
+    }
+}
