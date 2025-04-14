@@ -426,7 +426,7 @@ nav .logo{
 }
 
 .carousel {
-    max-width: 800px; /* Matches your container */
+    max-width:1000px; /* Matches your container */
     margin: 0 auto;
     position: relative;
 }
