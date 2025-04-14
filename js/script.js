@@ -43,14 +43,12 @@ function format(t) {
     return t < 10 ? '0' + t : t;
 }
 
-// Carousel
+// Carousel (Updated to Remove Arrows)
 const track = document.querySelector(".carousel-track");
 const slides = Array.from(document.querySelectorAll(".thumbnail"));
-const leftArrow = document.getElementById("slide-left");
-const rightArrow = document.getElementById("slide-right");
 const dotsContainer = document.getElementById("carousel-dots");
 
-if (track && slides.length && leftArrow && rightArrow && dotsContainer) {
+if (track && slides.length && dotsContainer) {
     let currentIndex = 0;
     let autoPlayInterval;
 
@@ -85,11 +83,6 @@ if (track && slides.length && leftArrow && rightArrow && dotsContainer) {
         goToSlide(currentIndex + 1);
     }
 
-    // Previous slide
-    function prevSlide() {
-        goToSlide(currentIndex - 1);
-    }
-
     // Auto-play
     function startAutoPlay() {
         autoPlayInterval = setInterval(nextSlide, 5000);
@@ -98,19 +91,6 @@ if (track && slides.length && leftArrow && rightArrow && dotsContainer) {
     function stopAutoPlay() {
         clearInterval(autoPlayInterval);
     }
-
-    // Event listeners
-    leftArrow.addEventListener("click", () => {
-        stopAutoPlay();
-        prevSlide();
-        startAutoPlay();
-    });
-
-    rightArrow.addEventListener("click", () => {
-        stopAutoPlay();
-        nextSlide();
-        startAutoPlay();
-    });
 
     // Pause on hover
     track.parentElement.addEventListener("mouseenter", stopAutoPlay);
