@@ -1,0 +1,266 @@
+/* Portfolio Page Styles */
+
+/* Define CSS Variables (Copied from style.css for Independence) */
+:root {
+    --pink: #e9204f;
+    --color-sec: #db6400;
+    --color-grey: #f5f5f5;
+    --black: #1c1c1c;
+    --white: #fff;
+    --light-grey: #ccc;
+}
+
+/* Portfolio Header */
+#portfolio-header {
+    padding: 5rem 0;
+    background: var(--color-grey);
+    text-align: center;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#portfolio-header h1 {
+    font-size: 4rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+#portfolio-header .static-btn {
+    padding: 1rem 2rem;
+    background: var(--black);
+    color: var(--white);
+    border: 2px solid var(--pink);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#portfolio-header .static-btn:hover {
+    background: var(--color-sec);
+    transform: scale(1.05);
+}
+
+/* Portfolio Section */
+#portfolio {
+    padding: 4rem 0;
+    background: var(--white);
+}
+
+#portfolio .portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+#portfolio .portfolio-text {
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+#portfolio .portfolio-text:hover {
+    transform: scale(1.05);
+}
+
+#portfolio .portfolio-text i {
+    font-size: 2rem;
+    color: var(--pink);
+    transition: color 0.3s ease;
+}
+
+#portfolio .portfolio-text:hover i {
+    color: var(--color-sec);
+}
+
+#portfolio .portfolio-text h3 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    color: var(--black);
+}
+
+#portfolio .h-line {
+    border-top: 2px solid var(--pink);
+    margin: 2rem 0;
+}
+
+#portfolio .portfolio-image {
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+#portfolio .portfolio-image img {
+    width: 100%;
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#portfolio .portfolio-image img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Contact Section */
+#contact {
+    padding: 4rem 0;
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact input {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact input:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 5px rgba(233, 32, 79, 0.3);
+    outline: none;
+}
+
+#contact .btn {
+    padding: 0.75rem;
+    background: var(--pink);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#contact .btn:hover {
+    background: var(--color-sec);
+    transform: scale(1.05);
+}
+
+/* Footer (Portfolio Page Specific) */
+footer {
+    padding: 1.5rem 0;
+    background: var(--black);
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.875rem;
+    color: var(--light-grey);
+    margin: 0;
+}
+
+/* Image Modal */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-modal.show {
+    opacity: 1;
+}
+
+.image-modal .modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.image-modal img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+}
+
+.image-modal .close-modal {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.image-modal .close-modal:hover {
+    transform: scale(1.2);
+    color: var(--color-sec);
+}
+
+/* Responsive for Portfolio Page */
+@media (max-width: 991px) {
+    #portfolio .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #portfolio-header h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #portfolio-header {
+        padding: 3rem 0;
+        min-height: 40vh;
+    }
+
+    #portfolio-header h1 {
+        font-size: 2.5rem;
+    }
+
+    #portfolio-header .static-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+
+    #portfolio .portfolio-image img {
+        height: 200px;
+    }
+
+    #contact form {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #portfolio .portfolio {
+        grid-template-columns: 1fr;
+    }
+
+    #portfolio .portfolio-text h3 {
+        font-size: 1.25rem;
+    }
+
+    #portfolio .portfolio-text i {
+        font-size: 1.5rem;
+    }
+}
