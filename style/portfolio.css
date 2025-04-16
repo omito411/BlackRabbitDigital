@@ -10,6 +10,11 @@
     --light-grey: #ccc;
 }
 
+/* Set Body Background to Black */
+body {
+    background: var(--black);
+}
+
 /* Portfolio Header */
 #portfolio-header {
     padding: 5rem 0;
