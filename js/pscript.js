@@ -13,9 +13,8 @@ close.addEventListener("click", () => {
     hamburger.classList.toggle("hide");
 });
 
-// 🔧 Fix: Define Search Modal
-const modal = document.getElementById("modal"); // ✅ Fix added
-
+// Search Modal
+const modal = document.getElementById("modal");
 const btn = document.querySelector(".search");
 const closeModal = document.querySelector(".close-modal");
 
@@ -53,12 +52,17 @@ portfolioImages.forEach(image => {
         imageModal.classList.add("image-modal");
         imageModal.innerHTML = `
             <div class="modal-content">
-                <span class="close-modal">&times;</span>
+                <span class="close-modal">×</span>
                 <img src="${image.src}" class="img-fluid">
             </div>
         `;
         document.body.appendChild(imageModal);
         
+        // Add fade-in effect
+        setTimeout(() => {
+            imageModal.classList.add("show");
+        }, 10); // Small delay to trigger transition
+
         document.querySelector(".close-modal").addEventListener("click", () => {
             imageModal.remove();
         });
