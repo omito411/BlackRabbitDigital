@@ -12,7 +12,7 @@
 
 /* Set Body Background to Black */
 body {
-    background: var(--black);
+    background: var(--black) !important; /* Fallback and override */
 }
 
 /* Portfolio Header */
@@ -28,7 +28,7 @@ body {
 
 #portfolio-header h1 {
     font-size: 4rem;
-    color: var(--white);
+    color: var(--black);
     margin-bottom: 1.5rem;
 }
 
