@@ -1,378 +1,156 @@
-/* Price Checker Page Styles */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AkPabor Digital | Price Checker</title>
+    <link rel="shortcut icon" href="../images/akpa.ico">
+    <link rel="stylesheet" href="../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/pricechecker.css"> <!-- Added pricechecker.css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header data-aos="fade-down" data-aos-duration="1000">
+        <div class="container-fluid">
+            <nav>
+                <img src="../images/akpa.png" alt="logo" class="logo">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-ul">
+                    <div class="fas fa-times close"></div>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../about/index.html" class="nav-link">About</a></li>
+                    <li><a href="../portfolio/index.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="index.html" class="nav-link current">Price Checker</a></li>
+                    <li><a href="../contact/index.html" class="nav-link">Contact</a></li>
+                </ul>
+                <i class="fas fa-search search"></i>
+            </nav>
+        </div>
+    </header>
 
-/* Define CSS Variables (Copied from style.css for Independence) */
-:root {
-    --pink: #e9204f;
-    --color-sec: #db6400;
-    --color-grey: #e3eef8;
-    --black: #000;
-    --white: #fff;
-    --light-grey: #ccc;
-    --dark-grey: #222831;
-}
+    <main>
+        <section id="intro" data-aos="fade-up" data-aos-duration="1000">
+            <div class="container">
+                <div class="intro-text">
+                    <h1>Black Rabbit Digital</h1>
+                    <button class="static-btn">Check the Price</button>
+                </div>
+            </div>
+        </section>
 
-/* Ensure Body Background Matches Header */
-body {
-    background: var(--black);
-}
+        <section data-aos="fade-up" data-aos-duration="1000">
+            <div class="container">
+                <h2>Find The Price</h2>
+            </div>
+        </section>
 
-/* Intro Section */
-#intro {
-    width: 100%;
-    background: var(--black);
-    color: var(--white);
-    padding: 0;
-    z-index: -2;
-}
+        <!-- Form -->
+        <section id="services-form" data-aos="fade-up" data-aos-duration="1500">
+            <div class="form-container container">
+                <form onsubmit="return false">
+                    <h2 class="form-intro-price">Fill out the details below to get a price for your project.</h2>
+                    <label class="required">Enter your name:</label>
+                    <input type="text" id="name-price" required/>
 
-#intro .container {
-    background: url("../images/background-small.jpeg") no-repeat center center / cover;
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+                    <label class="required">Enter your email address:</label>
+                    <input type="email" id="email-price" required/>
 
-#intro .intro-text {
-    width: 80%;
-    padding: 8rem 0;
-    text-align: center;
-}
+                    <label>Number of Web Pages:</label>
+                    <input type="number" id="num-web-pages"/>
 
-#intro .intro-text h1 {
-    font-size: 8rem;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 5rem;
-    transition: transform 0.3s ease;
-}
+                    <p><b>Website Requirements</b></p>
+                    <label>SEO</label><input type="checkbox" id="seo"/>
+                    <label>Graphic Design</label><input type="checkbox" id="graphic-design"/>
+                    <label>Google Ad Optimization</label><input type="checkbox" id="google-ads"/>
+                    <label>Social Media Posts</label><input type="checkbox" id="social-media-posts"/>
+                    <label>Ecommerce Functionality</label><input type="checkbox" id="ecommerce"/>
+                    <label>6 Months Support & Maintenance</label><input type="checkbox" id="support"/>
 
-#intro .intro-text h1:hover {
-    transform: scale(1.05);
-}
+                    <button class="static-btn" onclick="servicesCalculate()">Submit</button>
+                    <button class="static-btn" onclick="sendEmail()">Send Email</button>
+                </form>
 
-#intro .static-btn {
-    display: inline-block;
-    padding: 1.5rem 3rem;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--white);
-    border: 2px solid var(--pink);
-    background: transparent;
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative;
-    text-decoration: none;
-    overflow: hidden;
-    z-index: 1;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
+                <div class="price-display" data-aos="zoom-in" data-aos-duration="1000">
+                    <h2>Your Website will cost:</h2>
+                    <p id="message">?</p>
+                </div>
+            </div>
+        </section>
 
-#intro .static-btn::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--pink);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: -1;
-}
+        <section id="company-info" data-aos="fade-up" data-aos-duration="2000">
+            <div class="container">
+                <div class="company-header">
+                    <img src="../images/akpa.png" alt="AkPabor Digital Logo" class="footer-logo">
+                    <h2>Your Partner in Digital Excellence</h2>
+                    <p>We are a full-stack, SEO-friendly digital agency that helps businesses launch and grow.</p>
+                </div>
+                <div class="company-columns">
+                    <div class="column">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><p>Founded: 2024</p></li>
+                            <li><p>Team: 15 Experts</p></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Locations</h3>
+                        <ul>
+                            <li><p>Dublin, Ireland</p></li>
+                            <li><p>London, UK</p></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Explore</h3>
+                        <ul>
+                            <li><a href="../about/">About Us</a></li>
+                            <li><a href="../portfolio/">Portfolio</a></li>
+                            <li><a href="../priceChecker/">Price Checker</a></li>
+                            <li><a href="../contact/">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="#">Join Our Community</a></li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-#intro .static-btn:hover {
-    background: var(--color-sec);
-    transform: scale(1.05);
-}
+    <footer data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <p>© 2024 AkPabor Digital. All rights reserved.</p>
+        </div>
+    </footer>
 
-#intro .static-btn:hover::before {
-    transform: translateX(0);
-}
+    <!-- Search Modal -->
+    <div class="search-modal" id="modal">
+        <span class="close-modal">×</span>
+        <div class="modal-content">
+            <form action="">
+                <input type="text" placeholder="Search"/>
+                <i class="fas fa-search search"></i>
+            </form>
+        </div>
+    </div>
 
-/* Find the Price Section */
-section:nth-child(2) {
-    background: var(--white);
-    text-align: center;
-    padding: 4rem 0;
-}
-
-section:nth-child(2) h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--black);
-    position: relative;
-    margin-bottom: 2rem;
-}
-
-section:nth-child(2) h2::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    width: 50px;
-    height: 3px;
-    background: var(--pink);
-    transform: translateX(-50%);
-}
-
-/* Services Form Section */
-#services-form {
-    padding: 4rem 0;
-    background: var(--color-grey);
-}
-
-#services-form .form-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 3rem;
-    background: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-#services-form .form-intro-price {
-    text-align: left;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--black);
-    margin-bottom: 2rem;
-}
-
-#services-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-#services-form label {
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: var(--black);
-}
-
-#services-form .required::after {
-    content: " *";
-    color: red;
-    font-size: 1.6rem;
-}
-
-#services-form input[type="text"],
-#services-form input[type="email"],
-#services-form input[type="number"] {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.6rem;
-    border: 2px solid var(--pink);
-    border-radius: 5px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#services-form input[type="text"]:focus,
-#services-form input[type="email"]:focus,
-#services-form input[type="number"]:focus {
-    border-color: var(--color-sec);
-    box-shadow: 0 0 5px rgba(219, 100, 0, 0.3);
-    outline: none;
-}
-
-#services-form p {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--black);
-    margin: 1rem 0;
-}
-
-#services-form input[type="checkbox"] {
-    margin-right: 0.5rem;
-    transform: scale(1.2);
-    transition: transform 0.3s ease;
-}
-
-#services-form input[type="checkbox"]:hover {
-    transform: scale(1.4);
-}
-
-#services-form .static-btn {
-    padding: 1rem 2rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--white);
-    background: var(--pink);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-#services-form .static-btn:hover {
-    background: var(--color-sec);
-    transform: scale(1.05);
-}
-
-/* Price Display */
-.price-display {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.price-display h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--black);
-    margin-bottom: 1rem;
-}
-
-.price-display #message {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--pink);
-    transition: transform 0.3s ease;
-}
-
-.price-display #message:hover {
-    transform: scale(1.1);
-}
-
-/* Company Info Section */
-#company-info {
-    padding: 4rem 0;
-    background: var(--black);
-    color: var(--white);
-}
-
-#company-info .company-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-#company-info .company-header .footer-logo {
-    width: 150px;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
-}
-
-#company-info .company-header .footer-logo:hover {
-    transform: scale(1.05);
-}
-
-#company-info .company-header h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-#company-info .company-header p {
-    font-size: 1rem;
-    color: var(--light-grey);
-}
-
-#company-info .company-columns {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-}
-
-#company-info .column h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: var(--pink);
-}
-
-#company-info .column ul {
-    list-style: none;
-    padding: 0;
-}
-
-#company-info .column ul li {
-    margin-bottom: 0.75rem;
-}
-
-#company-info .column ul li a {
-    color: var(--white);
-    text-decoration: none;
-    font-size: 0.875rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-#company-info .column ul li a:hover {
-    color: var(--color-sec);
-    transform: translateX(5px);
-}
-
-#company-info .column ul li p {
-    font-size: 0.875rem;
-    color: var(--light-grey);
-    margin: 0;
-}
-
-#company-info .social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-#company-info .social-links a {
-    color: var(--white);
-    font-size: 1.25rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-#company-info .social-links a:hover {
-    color: var(--color-sec);
-    transform: scale(1.2);
-}
-
-/* Footer (Price Checker Page Specific) */
-footer {
-    padding: 1.5rem 0;
-    background: var(--black);
-    text-align: center;
-}
-
-footer p {
-    font-size: 0.875rem;
-    color: var(--light-grey);
-    margin: 0;
-}
-
-/* Responsive for Price Checker Page */
-@media (max-width: 991px) {
-    #intro .intro-text h1 {
-        font-size: 6rem;
-    }
-
-    #company-info .company-columns {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    #intro {
-        min-height: 40vh;
-    }
-
-    #intro .intro-text {
-        width: 100%;
-        padding: 6rem 0;
-    }
-
-    #intro .intro-text h1 {
-        font-size: 5rem;
-    }
-
-    #intro .static-btn {
-        padding: 1rem 2rem;
-        font-size: 1.8rem;
-    }
-
-    #services-form .form-container {
-        padding: 2rem;
-    }
-
-    #services-form .form-intro-price {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 576px) {
-    #intro .intro-text h1
+    <!-- JavaScript -->
+    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/PriceCheckerScript.js"></script>
+    <script>AOS.init();</script>
+</body>
+</html>
