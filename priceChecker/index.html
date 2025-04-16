@@ -1,155 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AkPabor Digital | Price Checker</title>
-        <link rel="shortcut icon" href="../images/akpa.ico">
-        <link rel="stylesheet" href="../style/bootstrap.min.css">
-        <link rel="stylesheet" href="../style/style.css">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">        
-    </head>
-    <body>
-        <header>
-            <div class="container-fluid">
-                <nav>
-                    <img src="../images/akpa.png" alt="logo" class="logo">
-                    <div class="hamburger">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                    <ul class="nav-ul">
-                        <div class="fas fa-times close"></div>
-                        <li><a href="../index.html" class="nav-link">Home</a></li>
-                        <li><a href="../about/index.html" class="nav-link">About</a></li>
-                        <li><a href="../portfolio/index.html" class="nav-link">Portfolio</a></li>
-                        <li><a href="index.html" class="nav-link current">Price Checker</a></li>
-                        <li><a href="../contact/index.html" class="nav-link">Contact</a></li>
-                    </ul>
-                    <i class="fas fa-search search"></i>
-                </nav>	
-            </div>
-        </header>
-
-        <main>
-            <section id="intro">
-                <div class="container">
-                    <div class="intro-text">
-                        <h1>Black Rabbit Digital</h1>
-                        <button class="static-btn">Check the Price</button>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AkPabor Digital | Price Checker</title>
+    <link rel="shortcut icon" href="../images/akpa.ico">
+    <link rel="stylesheet" href="../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/pricechecker.css"> <!-- Added pricechecker.css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header data-aos="fade-down" data-aos-duration="1000">
+        <div class="container-fluid">
+            <nav>
+                <img src="../images/akpa.png" alt="logo" class="logo">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
                 </div>
-            </section>
-
-            <section>
-                <div class="container">
-                    <h2>Find The Price</h2>
-                </div>
-            </section>
-
-            <!-- Form -->
-            <section id="services-form">
-                <div class="form-container container">
-                    <form onsubmit="return false">
-                        <h2 class="form-intro-price">Fill out the details below to get a price for your project.</h2>
-                        <label class="required">Enter your name:</label>
-                        <input type="text" id="name-price" required/>
-                        
-                        <label class="required">Enter your email address:</label>
-                        <input type="email" id="email-price" required/>
-
-                        <label>Number of Web Pages:</label>
-                        <input type="number" id="num-web-pages"/>
-
-                        <p><b>Website Requirements</b></p>
-                        <label>SEO</label><input type="checkbox" id="seo"/>
-                        <label>Graphic Design</label><input type="checkbox" id="graphic-design"/>
-                        <label>Google Ad Optimization</label><input type="checkbox" id="google-ads"/>
-                        <label>Social Media Posts</label><input type="checkbox" id="social-media-posts"/>
-                        <label>Ecommerce Functionality</label><input type="checkbox" id="ecommerce"/>
-                        <label>6 Months Support & Maintenance</label><input type="checkbox" id="support"/>
-
-                        <button class="static-btn" onclick="servicesCalculate()">Submit</button>
-                        <button class="static-btn" onclick="sendEmail()">Send Email</button>
-                    </form>
-
-                    <div class="price-display">
-                        <h2>Your Website will cost:</h2>
-                        <p id="message">?</p>
-                    </div>
-                </div>
-            </section>
-            <section id="company-info" data-aos="fade-up" data-aos-duration="2000">
-                <div class="container">
-                    <div class="company-header">
-                        <img src="images/akpa.png" alt="AkPabor Digital Logo" class="footer-logo">
-                        <h2>Your Partner in Digital Excellence</h2>
-                        <p>We are a full-stack, SEO-friendly digital agency that helps businesses launch and grow.</p>
-                    </div>
-                    <div class="company-columns">
-                        <div class="column">
-                            <h3>About</h3>
-                            <ul>
-                                <li><a href="#">Our Story</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><p>Founded: 2024</p></li>
-                                <li><p>Team: 15 Experts</p></li>
-                            </ul>
-                        </div>
-                        <div class="column">
-                            <h3>Locations</h3>
-                            <ul>
-                                <li><p>Dublin, Ireland</p></li>
-                                <li><p>London, UK</p></li>
-                            </ul>
-                        </div>
-                        <div class="column">
-                            <h3>Explore</h3>
-                            <ul>
-                                <li><a href="about/">About Us</a></li>
-                                <li><a href="portfolio/">Portfolio</a></li>
-                                <li><a href="priceChecker/">Price Checker</a></li>
-                                <li><a href="contact/">Contact Us</a></li>
-                            </ul>
-                        </div>
-                        <div class="column">
-                            <h3>Connect</h3>
-                            <ul>
-                                <li><a href="#">Join Our Community</a></li>
-                            </ul>
-                            <div class="social-links">
-                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer data-aos="fade-up" data-aos-duration="1000">
-            <div class="container">
-                <p>© 2024 AkPabor Digital. All rights reserved.</p>
-            </div>
-        </footer>
-
-
-        <!-- Search Modal -->
-        <div class="search-modal" id="modal">
-            <span class="close-modal">&times;</span>
-            <div class="modal-content">
-                <form action="">
-                    <input type="text" placeholder="Search"/>
-                    <i class="fas fa-search search"></i>
-                </form>
-            </div>
+                <ul class="nav-ul">
+                    <div class="fas fa-times close"></div>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../about/index.html" class="nav-link">About</a></li>
+                    <li><a href="../portfolio/index.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="index.html" class="nav-link current">Price Checker</a></li>
+                    <li><a href="../contact/index.html" class="nav-link">Contact</a></li>
+                </ul>
+                <i class="fas fa-search search"></i>
+            </nav>
         </div>
+    </header>
 
-        <!-- JavaScript -->
-        <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="../js/PriceCheckerScript.js"></script>
-        <script>AOS.init();</script>
-    </body>   
+    <main>
+        <section id="intro" data-aos="fade-up" data-aos-duration="1000">
+            <div class="container">
+                <div class="intro-text">
+                    <h1>AkPabor Digital</h1>
+                    <button class="static-btn">Check the Price</button>
+                </div>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-duration="1000">
+            <div class="container">
+                <h2>Find The Price</h2>
+            </div>
+        </section>
+
+        <!-- Form -->
+        <section id="services-form" data-aos="fade-up" data-aos-duration="1500">
+            <div class="form-container container">
+                <form onsubmit="return false">
+                    <h2 class="form-intro-price">Fill out the details below to get a price for your project.</h2>
+                    <label class="required">Enter your name:</label>
+                    <input type="text" id="name-price" required/>
+
+                    <label class="required">Enter your email address:</label>
+                    <input type="email" id="email-price" required/>
+
+                    <label>Number of Web Pages:</label>
+                    <input type="number" id="num-web-pages"/>
+
+                    <p><b>Website Requirements</b></p>
+                    <label>SEO</label><input type="checkbox" id="seo"/>
+                    <label>Graphic Design</label><input type="checkbox" id="graphic-design"/>
+                    <label>Google Ad Optimization</label><input type="checkbox" id="google-ads"/>
+                    <label>Social Media Posts</label><input type="checkbox" id="social-media-posts"/>
+                    <label>Ecommerce Functionality</label><input type="checkbox" id="ecommerce"/>
+                    <label>6 Months Support & Maintenance</label><input type="checkbox" id="support"/>
+
+                    <button class="static-btn" onclick="servicesCalculate()">Submit</button>
+                    <button class="static-btn" onclick="sendEmail()">Send Email</button>
+                </form>
+
+                <div class="price-display" data-aos="zoom-in" data-aos-duration="1000">
+                    <h2>Your Website will cost:</h2>
+                    <p id="message">?</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="company-info" data-aos="fade-up" data-aos-duration="2000">
+            <div class="container">
+                <div class="company-header">
+                    <img src="../images/akpa.png" alt="AkPabor Digital Logo" class="footer-logo">
+                    <h2>Your Partner in Digital Excellence</h2>
+                    <p>We are a full-stack, SEO-friendly digital agency that helps businesses launch and grow.</p>
+                </div>
+                <div class="company-columns">
+                    <div class="column">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><p>Founded: 2024</p></li>
+                            <li><p>Team: 15 Experts</p></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Locations</h3>
+                        <ul>
+                            <li><p>Dublin, Ireland</p></li>
+                            <li><p>London, UK</p></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Explore</h3>
+                        <ul>
+                            <li><a href="../about/">About Us</a></li>
+                            <li><a href="../portfolio/">Portfolio</a></li>
+                            <li><a href="../priceChecker/">Price Checker</a></li>
+                            <li><a href="../contact/">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="#">Join Our Community</a></li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <p>© 2024 AkPabor Digital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="modal">
+        <span class="close-modal">×</span>
+        <div class="modal-content">
+            <form action="">
+                <input type="text" placeholder="Search"/>
+                <i class="fas fa-search search"></i>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/PriceCheckerScript.js"></script>
+    <script>AOS.init();</script>
+</body>
 </html>
