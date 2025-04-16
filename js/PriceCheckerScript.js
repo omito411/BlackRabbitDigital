@@ -17,7 +17,12 @@ function servicesCalculate() {
     if (ecommerce) price += numWebPages * 15;
     if (support) price += numWebPages * 10;
 
-    document.getElementById("message").innerHTML = "Your Website will cost €" + price;
+    const messageElement = document.getElementById("message");
+    messageElement.innerHTML = "Your Website will cost €" + price;
+    // Trigger animation on price update
+    messageElement.classList.remove("price-update");
+    void messageElement.offsetWidth; // Force reflow to restart animation
+    messageElement.classList.add("price-update");
 }
 
 function sendEmail() {
@@ -39,9 +44,8 @@ close.addEventListener("click", () => {
     hamburger.classList.toggle("hide");
 });
 
-// 🔧 Fix: Define Search Modal
+// Search Modal
 const modal = document.getElementById("modal");
-
 const btn = document.querySelector(".search");
 const closeModal = document.querySelector(".close-modal");
 
@@ -59,8 +63,8 @@ function closePopup() {
 
 // Form Submission
 function formSubmission() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
+    var name = document.getElementById("name-price").value;
+    var email = document.getElementById("email-price").value;
 
     window.alert("Thank you " + name + " for your enquiry. We will be in contact with you shortly via the given email address, " + email);
 }
