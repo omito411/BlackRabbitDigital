@@ -10,9 +10,9 @@
     --light-grey: #ccc;
 }
 
-/* Set Body Background to Black */
-body {
-    background: var(--black) !important; /* Fallback and override */
+/* Set Body Background to Black with High Specificity */
+html, body {
+    background: var(--black) !important;
 }
 
 /* Portfolio Header */
@@ -28,7 +28,7 @@ body {
 
 #portfolio-header h1 {
     font-size: 4rem;
-    color: var(--black);
+    color: var(--white);
     margin-bottom: 1.5rem;
 }
 
