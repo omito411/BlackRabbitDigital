@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="../style/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/portfolio.css"> <!-- Added portfolio.css -->
 </head>
 <body>
-    <header>
+    <header data-aos="fade-down" data-aos-duration="1000">
         <div class="container-fluid">
             <nav>
                 <img src="../images/akpa.png" alt="logo" class="logo">
@@ -31,7 +32,7 @@
     </header>
 
     <main>
-        <section id="portfolio-header">
+        <section id="portfolio-header" data-aos="fade-up" data-aos-duration="1000">
             <div class="container">
                 <div class="intro-text">
                     <h1>Black Rabbit Digital</h1>
@@ -43,47 +44,47 @@
         <section id="portfolio" data-aos="fade-up" data-aos-duration="2000">
             <div class="container">
                 <div class="portfolio">
-                    <div class="portfolio-text">
+                    <div class="portfolio-text" data-aos="zoom-in" data-aos-delay="100">
                         <i class="fas fa-digital-tachograph"></i>
                         <h3>Digital Strategy</h3>
                     </div>
-                    <div class="portfolio-text">
+                    <div class="portfolio-text" data-aos="zoom-in" data-aos-delay="200">
                         <i class="fab fa-bandcamp"></i>
                         <h3>Branding</h3>
                     </div>
-                    <div class="portfolio-text">
+                    <div class="portfolio-text" data-aos="zoom-in" data-aos-delay="300">
                         <i class="fas fa-network-wired"></i>
                         <h3>Web Design</h3>
                     </div>
-                    <div class="portfolio-text">
+                    <div class="portfolio-text" data-aos="zoom-in" data-aos-delay="400">
                         <i class="fab fa-sketch"></i>
                         <h3>UI/UX</h3>
                     </div>
-                    <div class="portfolio-text">
+                    <div class="portfolio-text" data-aos="zoom-in" data-aos-delay="500">
                         <i class="fas fa-tablet"></i>
                         <h3>Product Design</h3>
                     </div>
-                    <div class="portfolio-text">
+                    <div class="portfolio-text" data-aos="zoom-in" data-aos-delay="600">
                         <i class="fas fa-edit"></i>
                         <h3>Digital Troubleshooting</h3>
                     </div>
                 </div>
             </div>
 
-            <div class="h-line"></div>
+            <div class="h-line" data-aos="fade-right"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="portfolio-image">
                             <img src="../images/portfolio7.jpeg" class="img-fluid clickable-img" alt="Portfolio 7">
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="portfolio-image">
                             <img src="../images/portfolio2.jpeg" class="img-fluid clickable-img" alt="Portfolio 2">
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="portfolio-image">
                             <img src="../images/portfolio1.jpeg" class="img-fluid clickable-img" alt="Portfolio 1">
                         </div>
@@ -92,7 +93,7 @@
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" data-aos="fade-up" data-aos-duration="1000">
             <div class="container">
                 <h2>Get in Touch</h2>
                 <form method="POST">
@@ -104,15 +105,15 @@
         </section>
     </main>
 
-    <footer>
+    <footer data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
-            <p>&copy; 2025 AkPabor Digital. All rights reserved.</p>
+            <p>© 2025 AkPabor Digital. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Search Modal -->
     <div class="search-modal" id="modal">
-        <span class="close-modal">&times;</span>
+        <span class="close-modal">×</span>
         <div class="modal-content">
             <form action="">
                 <input type="text" placeholder="Search"/>
